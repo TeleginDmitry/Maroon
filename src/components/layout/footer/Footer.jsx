@@ -37,7 +37,7 @@ function Footer() {
 
       </div>
 
-
+<p>test</p>
 
 
       <div className="footer-bottom">
