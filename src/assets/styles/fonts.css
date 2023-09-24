@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: normal;
+    src: url(../fonts/Raleway-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'MPLUS 1P';
+    font-weight: normal;
+    font-style: normal;
+    src: url(../fonts/MPLUS1p-Regular.ttf) format('truetype');
+}
