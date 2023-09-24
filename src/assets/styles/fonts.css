@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Raleway-maroon';
+    font-weight: 400;
+    font-style: normal;
+    src: url(../fonts/Raleway-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Raleway-maroon';
+    font-style: normal;
+    font-weight: 500;
+    src: url(../fonts/Raleway-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Mplus 1p-maroon';
+    font-weight: 400;
+    font-style: normal;
+    src: url(../fonts/MPLUS1p-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Mplus 1p-maroon';
+    font-weight: 500;
+    font-style: normal;
+    src: url(../fonts/MPLUS1p-Medium.ttf) format('truetype');
+}
