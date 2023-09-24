@@ -22,6 +22,7 @@
     "rules": {
         "no-console": "warn",
         "import/no-default-export": "error",
-        "no-unused-vars": "error"
+        "no-unused-vars": "error",
+        "import/no-unresolved": "off"
     }
 }
