@@ -1,13 +1,27 @@
 @font-face {
     font-family: 'Raleway';
+    font-weight: 400;
     font-style: normal;
-    font-weight: normal;
     src: url(../fonts/Raleway-Regular.ttf) format('truetype');
 }
 
 @font-face {
-    font-family: 'MPLUS 1P';
-    font-weight: normal;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    src: url(../fonts/Raleway-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Mplus 1p';
+    font-weight: 400;
     font-style: normal;
     src: url(../fonts/MPLUS1p-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Mplus 1p';
+    font-weight: 500;
+    font-style: normal;
+    src: url(../fonts/MPLUS1p-Medium.ttf) format('truetype');
 }
