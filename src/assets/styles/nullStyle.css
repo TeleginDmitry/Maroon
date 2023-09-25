@@ -35,7 +35,8 @@ body {
     font-size: 100%;
     line-height: 1;
     font-size: 15px;
-    color: rgba(63, 63, 63, 1);
+    color: #122947;
+    background-color: #f8f8f6;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
