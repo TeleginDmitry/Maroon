@@ -1,7 +1,7 @@
-import { Item } from 'types/Item.type'
+import { ListItem } from 'types/ListItem.type'
 
 interface INavListIcomItem {
-    item: Item
+    item: ListItem
 }
 
 const NavListIcomItem = ({ item }: INavListIcomItem) => {

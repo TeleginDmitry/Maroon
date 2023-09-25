@@ -1,8 +1,8 @@
-import { Item } from 'types/Item.type'
+import { ListItem } from 'types/ListItem.type'
 import styles from './navListTextItem.module.css'
 
 interface Props {
-    item: Item
+    item: ListItem
 }
 
 const NavListTextItem = ({ item }: Props) => {
