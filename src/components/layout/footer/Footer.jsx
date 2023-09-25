@@ -1,56 +1,63 @@
 import '../../../assets/styles/nullStyle.css'
-import  '../footer/footer.css'
-import logo from '../../../assets/icons/logo.svg'
-import facebook from '../../../assets/icons/facebook.svg'
-import instagram from '../../../assets/icons/instagram.svg'
-import twitter from '../../../assets/icons/twitter.svg'
+import style from '../footer/footer.module.css'
+
+import { ReactComponent as Logo } from '../../../assets/icons/logo.svg';
+import { ReactComponent as Facebook } from '../../../assets/icons/facebook.svg';
+import { ReactComponent as Instagram } from '../../../assets/icons/instagram.svg';
+import { ReactComponent as Twitter } from '../../../assets/icons/twitter.svg';
+import { ReactComponent as Copy } from '../../../assets/icons/circle-c.svg';
+
 
 function Footer() {
   return ( 
 
-  <footer className="footer">
+  <footer className={style.footer}>
 
-    <div className="footer_wrapper">
+    <div className={style.footer_wrapper} >
  
-      <div className="footer-top">
+      <div className={style.footer_top} >
 
-        <div className="footer-top-left">
+        <div className={style.footer_top_left} >
 
-          <div className="footer-logo">
-            <img src={logo} alt="логотип" />
+          <div className={style.footer_logo} >
+            < Logo alt="логотип" />
           </div>
 
-          <div className="footer-links">
-            <a href="#" target="_blank" className="footer-link">Каталог</a>
-            <a href="#" target="_blank" className="footer-link">О нас</a>
-            <a href="#" target="_blank" className="footer-link">Магазины</a>
-            <a href="#" target="_blank" className="footer-link">Контакты</a>
+          <div className={style.footer_links} >
+            <a href="#" target="_blank" className={style.footer_link} >Каталог</a>
+            <a href="#" target="_blank" className={style.footer_link} >О&nbsp;нас</a>
+            <a href="#" target="_blank" className={style.footer_link} >Магазины</a>
+            <a href="#" target="_blank" className={style.footer_link} >Контакты</a>
           </div>
 
         </div>
 
-        <div className="footer-top-right">
-          <a href="#" target="_blank"> <img src={facebook} alt="facebook" /> </a>
-          <a href="#" target="_blank"> <img src={instagram} alt="instagram" /> </a>
-          <a href="#" target="_blank"> <img src={twitter} alt="twitter" /> </a>
+        <div className={style.footer_top_right} >
+          <a href="#" target="_blank"> <Facebook alt="facebook" /> </a>
+          <a href="#" target="_blank"> < Instagram alt="instagram" /> </a>
+          <a href="#" target="_blank"> <Twitter alt="twitter" /> </a>
         </div>
 
       </div>
+ 
+      <div className={style.footer_bottom_border} >
 
-<p>test</p>
+        <div className={style.footer_bottom} > 
 
+          <div className={style.footer_bottom_left} >
+            <p className={style.left_text} >Maroon 
+            <span> < Copy  alt="copy" /> </span>
+             2023 Все права защищены</p>
+          </div>
 
-      <div className="footer-bottom">
-        <div className="footer-bottom-left">
-          <p className="left-text">Maroon &copy; 2023 Все права защищены</p>
+          <div className={style.footer_bottom_right} >
+            <p className={style.right_text} >Политика конфиденциальности</p>
+          </div>
+
         </div>
-
-        <div className="footer-bottom-right">
-          <p className="right-text">Политика конфиденциальности</p>
-        </div>
-
+      
       </div>
-    
+ 
     </div>
 
   </footer>
