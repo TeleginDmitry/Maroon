@@ -1,0 +1,43 @@
+.wrapper {
+    border-top: 1px solid #b3bac1;
+
+    &:last-child {
+        border-bottom: 1px solid #b3bac1;
+    }
+
+    .header {
+        padding: 15px 10px 15px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        .title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #122947;
+        }
+        .icon {
+            min-width: 12px;
+        }
+    }
+
+    .container {
+        height: 0px;
+        transition: all 0.5s;
+        overflow: hidden;
+
+        &__active {
+            height: 100px;
+            margin-bottom: 15px;
+            overflow-y: auto;
+        }
+
+        .body {
+            color: #122947;
+            line-height: 20px;
+            font-size: 15px;
+            padding-right: 10px;
+        }
+    }
+}
