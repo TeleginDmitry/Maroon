@@ -1,8 +1,6 @@
-import { Nav } from 'components/nav/Nav';
-
-import logo from '../../../assets/icons/logo.svg';
-
-import styles from './header.module.css';
+import { Navigation } from 'components/navigation/Navigation'
+import logo from '../../shared/logo.svg';
+import styles from './header.module.css'
 
 const Header = () => {
     return (
@@ -10,10 +8,9 @@ const Header = () => {
             <a href='#'>
                 <img src={logo} alt='logo' />
             </a>
-            
-            <Nav />
+            <Navigation />
         </header>
-    )
+    );
 }
 
-export { Header };
+export { Header }
