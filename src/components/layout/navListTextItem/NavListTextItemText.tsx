@@ -1,4 +1,4 @@
-import { ListItem } from 'types/ListItem.type'
+import { ListItem } from 'interface/ListItem.type'
 import styles from './navListTextItem.module.css'
 
 interface Props {

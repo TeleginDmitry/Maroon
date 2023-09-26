@@ -1,4 +1,4 @@
-import { ListItem } from 'types/ListItem.type'
+import { ListItem } from 'interface/ListItem.type'
 
 interface INavListIcomItem {
     item: ListItem
@@ -8,7 +8,7 @@ const NavListIcomItem = ({ item }: INavListIcomItem) => {
     return (
         <li>
             <a href='#'>
-                <img src={item.data} alt='source' />
+                <img src={item.data} alt={item.altData} />
             </a>
         </li>
     )

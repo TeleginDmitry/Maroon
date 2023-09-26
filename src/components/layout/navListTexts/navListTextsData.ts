@@ -1,4 +1,6 @@
-const navListTextData = [
+import { ListItem } from "interface/ListItem.type";
+
+const navListTextsData: ListItem[] = [
     {
         id: 1,
         data: "Каталог",
@@ -16,4 +18,4 @@ const navListTextData = [
     },
 ]
 
-export { navListTextData };
+export { navListTextsData };
