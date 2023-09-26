@@ -1,9 +1,19 @@
+import { classNames } from 'utils/classNames/classNames'
 import styles from './Button.module.scss'
 
-interface Props {
-    text: string
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    children: string
 }
 
-export function Button({ text }: Props) {
-    return <button className={styles.button}>{text}</button>
+export function Button({ children, className, ...rest }: Props) {
+    return (
+        <button
+            {...rest}
+            className={classNames(styles.button, {
+                [className!]: !!className
+            })}
+        >
+            {children}
+        </button>
+    )
 }
