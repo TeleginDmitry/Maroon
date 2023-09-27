@@ -1,0 +1,85 @@
+$text-color: #959595;
+$font-family: Mplus 1p, sans-serif;
+%link-text{
+font-family: $font-family;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.footer_wrapper{
+display: flex;
+flex-direction: column;
+
+width: 1366px;
+background-color: #F4F1ED; 
+}
+
+
+.footer_top{
+padding: 60px 0 60px 100px;
+display: flex;
+justify-content: space-between;
+
+    &_left{
+    display: flex;
+    align-items: center;
+    }
+
+    &_right{
+    display: flex;
+    column-gap: 30px;
+    padding-right: 98px;
+
+        .iconSocial{
+        width: 20px;
+        height: 20px;
+        }
+    }
+
+}
+
+.footer_logo{
+margin-right: 70px;
+}
+
+.footer_links{
+display: flex;
+column-gap: 40px;
+}
+
+.footer_link{
+color: #122947;
+font-size: 16px;
+@extend %link-text;
+}
+
+
+.footer_bottom{
+display: flex;    
+justify-content: space-between;
+padding: 22px 98px 22px 100px;
+
+    &_border{
+    border-top: 1px solid #D1D1D1 ;
+    }
+
+}
+
+.left_text{
+color: $text-color;
+font-size: 12px;
+@extend %link-text;
+
+    .iconCopy{
+    width: 14px;
+    height: 14px;
+    margin: 0 5px;
+    }
+}
+
+.right_text{
+color: $text-color;
+font-size: 12px;
+@extend %link-text;
+}

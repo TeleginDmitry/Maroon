@@ -1,5 +1,5 @@
 import '../../../assets/styles/nullStyle.css'
-import style from '../footer/footer.module.css'
+import style from '../footer/footer.module.scss'
 
 import { ReactComponent as Logo } from '../../../assets/icons/logo.svg';
 import { ReactComponent as Facebook } from '../../../assets/icons/facebook.svg';
@@ -33,9 +33,9 @@ function Footer() {
         </div>
 
         <div className={style.footer_top_right} >
-          <a href="#" target="_blank"> <Facebook alt="facebook" /> </a>
-          <a href="#" target="_blank"> < Instagram alt="instagram" /> </a>
-          <a href="#" target="_blank"> <Twitter alt="twitter" /> </a>
+          <a href="#" target="_blank" > <Facebook alt="facebook" className={style.iconSocial}/> </a>
+          <a href="#" target="_blank"> < Instagram alt="instagram" className={style.iconSocial}/> </a>
+          <a href="#" target="_blank"> <Twitter alt="twitter" className={style.iconSocial}/> </a>
         </div>
 
       </div>
@@ -46,7 +46,7 @@ function Footer() {
 
           <div className={style.footer_bottom_left} >
             <p className={style.left_text} >Maroon 
-            <span> < Copy  alt="copy" /> </span>
+            <span> < Copy  alt="copy" className={style.iconCopy}/> </span>
              2023 Все права защищены</p>
           </div>
 

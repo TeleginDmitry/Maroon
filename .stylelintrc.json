@@ -1,0 +1,15 @@
+{
+    "extends": "stylelint-config-standard-scss",
+    "rules": {
+        "indentation": [4],
+        "selector-class-pattern": "^([a-z][a-zA-Z0-9]*)?$",
+        "block-no-empty": true,
+        "color-no-invalid-hex": true,
+        "declaration-block-no-duplicate-properties": true,
+        "declaration-block-no-redundant-longhand-properties": true,
+        "property-no-unknown": true,
+        "no-duplicate-selectors": true,
+        "scss/selector-no-redundant-nesting-selector": true
+    },
+    "ignoreFiles": ["**/src/assets/**"]
+}
