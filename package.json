@@ -25,7 +25,9 @@
         "eject": "react-scripts eject",
         "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,scss,css}\"",
         "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
-        "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --fix"
+        "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --fix",
+        "stylelint": "stylelint \"**/*.{css,scss}\"",
+        "stylelint:fix": "stylelint \"**/*.{css,scss}\" --fix"
     },
     "eslintConfig": {
         "extends": [
@@ -54,6 +56,8 @@
         "eslint-plugin-react": "^7.33.2",
         "eslint-plugin-react-hooks": "^4.6.0",
         "prettier": "^3.0.3",
-        "sass": "^1.68.0"
+        "sass": "^1.68.0",
+        "stylelint": "^15.10.3",
+        "stylelint-config-standard-scss": "^11.0.0"
     }
 }
