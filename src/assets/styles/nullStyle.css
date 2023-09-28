@@ -82,6 +82,7 @@ button::-moz-focus-inner {
 a,
 a:visited {
     text-decoration: none;
+    color: #122947;
 }
 
 a:hover {
