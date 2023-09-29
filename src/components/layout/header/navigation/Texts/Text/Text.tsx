@@ -1,11 +1,11 @@
-import { ListItem } from 'interface/ListItem.type'
+import { HeaderText } from 'shared/types/header.type'
 import styles from './navListTextItem.module.css'
 
 interface Props {
-    item: ListItem
+    item: HeaderText
 }
 
-const NavListTextItem = ({ item }: Props) => {
+const Text = ({ item }: Props) => {
     return (
         <li className={styles.text}>
             <a href='#' className={styles.link}>
@@ -15,4 +15,4 @@ const NavListTextItem = ({ item }: Props) => {
     )
 }
 
-export { NavListTextItem }
+export { Text }

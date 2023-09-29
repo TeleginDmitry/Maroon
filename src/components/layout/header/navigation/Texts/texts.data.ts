@@ -1,8 +1,9 @@
-import { ListItem } from "interface/ListItem.type";
+import { HeaderText } from "shared/types/header.type";
 
-const navListTextsData: ListItem[] = [
+const navListTextsData: HeaderText[] = [
     {
         id: 1,
+
         data: "Каталог",
     },
 

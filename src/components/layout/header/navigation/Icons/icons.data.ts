@@ -1,17 +1,18 @@
 import person from '../../../assets/icons/person.svg';
 import basket from '../../../assets/icons/basket.svg';
+import { HeaderIcon } from 'shared/types/header.type';
 
-const navListIconsData = [
+const navListIconsData: HeaderIcon[] = [
     {
         id: 1,
         data: person,
-        altData: 'человек'
+        altData: 'человек',
     },
 
     {
         id: 2,
         data: basket,
-        altData: 'корзина'
+        altData: 'корзина',
     }
 ]
 
