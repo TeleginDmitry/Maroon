@@ -2,7 +2,7 @@ import {
     CATALOG_SCREEN,
     ABOUT_SCREEN,
     CONTACTS_SCREEN
-} from 'config/screens.config'
+} from 'configs/screens.config'
 
 export const screens = [
     {
