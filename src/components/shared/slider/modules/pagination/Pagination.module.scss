@@ -1,0 +1,19 @@
+.pagination {
+    grid-column: 2 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    user-select: none;
+
+    .page {
+        font-size: 18px;
+        font-weight: 500;
+        color: #9a9da0;
+        transition: 0.3s;
+
+        &:first-child {
+            color: #122947;
+        }
+    }
+}

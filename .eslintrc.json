@@ -23,6 +23,7 @@
         "no-console": "warn",
         "import/no-default-export": "error",
         "no-unused-vars": "error",
-        "import/no-unresolved": "off"
+        "import/no-unresolved": "off",
+        "import/named": "off"
     }
 }

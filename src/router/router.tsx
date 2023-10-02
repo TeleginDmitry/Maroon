@@ -14,7 +14,7 @@ import {
     CATALOG_SCREEN,
     CONTACTS_SCREEN,
     PROFILE_SCREEN
-} from 'config/screens.config'
+} from 'configs/screens.config'
 import { createBrowserRouter } from 'react-router-dom'
 
 export const router = createBrowserRouter([
