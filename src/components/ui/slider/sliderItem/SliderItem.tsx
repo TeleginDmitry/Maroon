@@ -1,11 +1,11 @@
-import { Options } from 'shared/types/slider.type'
+import { OptionsType } from 'shared/types/slider.type'
 import styles from './SliderItem.module.scss'
 import { SliderContext } from 'contexts/Slider.context'
 import { useContext, useId, useRef } from 'react'
 import { classNames } from 'utils/classNames/classNames'
 
 interface Props {
-    children: ((options: Options) => React.ReactNode) | React.ReactNode
+    children: ((options: OptionsType) => React.ReactNode) | React.ReactNode
 }
 
 export function SliderItem({ children }: Props) {
@@ -15,7 +15,7 @@ export function SliderItem({ children }: Props) {
 
     const slider = useRef<HTMLLIElement>(null)
 
-    const options: Options = {
+    const options: OptionsType = {
         isNext: nextId === id,
         isPrev: prevId === id,
         isActive: activeId === id

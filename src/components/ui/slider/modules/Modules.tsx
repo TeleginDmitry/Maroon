@@ -3,9 +3,10 @@ import { Pagination } from './pagination/Pagination'
 import { Navigation } from './navigation/Navigation'
 import { useContext, useState } from 'react'
 import { SliderContext } from 'contexts/Slider.context'
+import { NavigationType } from 'shared/types/slider.type'
 
 interface Props {
-    navigation: boolean
+    navigation: boolean | NavigationType
     pagination: boolean
 }
 
@@ -39,6 +40,7 @@ export function Modules({ navigation, pagination }: Props) {
             )}
             {navigation && (
                 <Navigation
+                    navigation={navigation}
                     swipeLeft={swipeLeft}
                     swipeRight={swipeRight}
                 ></Navigation>

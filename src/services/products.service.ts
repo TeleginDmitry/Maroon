@@ -1,9 +1,9 @@
 import { instance } from 'api/api.interceptor'
 import { AxiosResponse } from 'axios'
-import { Product } from 'shared/types/product.type'
+import { ProductType } from 'shared/types/product.type'
 
 export const productsService = {
-    async getProducts(): Promise<AxiosResponse<Product[]>> {
+    async getProducts(): Promise<AxiosResponse<ProductType[]>> {
         return instance.get('/products')
     }
 }
