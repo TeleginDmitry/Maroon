@@ -1,0 +1,8 @@
+.footer {
+    padding: 0 50px;
+    background-color: #f4f1ed;
+
+    @media (width <= 320px) {
+        padding: 0 15px;
+    }
+}

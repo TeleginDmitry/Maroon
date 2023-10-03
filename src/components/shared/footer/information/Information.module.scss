@@ -1,0 +1,13 @@
+.information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .text {
+        color: #959595;
+        font-size: 13px;
+    }
+}

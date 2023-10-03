@@ -1,0 +1,10 @@
+.slider {
+    position: relative;
+    overflow: hidden;
+
+    .slides {
+        position: relative;
+        align-items: center;
+        display: flex;
+    }
+}
