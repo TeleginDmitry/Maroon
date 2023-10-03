@@ -1,0 +1,25 @@
+.wrapper {
+    display: flex;
+    gap: 80px;
+    padding: 100px 0px 100px 100px;
+    align-items: center;
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        max-width: 240px;
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            .title {
+                font-size: 32px;
+                font-weight: 500;
+            }
+            .description {
+                font-size: 18px;
+                line-height: 26.1px;
+            }
+        }
+    }
+}

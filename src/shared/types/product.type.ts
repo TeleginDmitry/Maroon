@@ -1,15 +1,15 @@
-export interface Accordion {
+export interface AccordionType {
     title: string
     body: string
 }
 
-export interface Product {
+export interface ProductType {
     id: number
     image: string
     name: string
     title: string
     description: string
-    accordion: Accordion[]
+    accordion: AccordionType[]
     volume: string
     price: number
 }
