@@ -1,10 +1,14 @@
-export interface Options {
+export interface OptionsType {
     isActive: boolean
     isPrev: boolean
     isNext: boolean
 }
 
-export interface SliderContextValues {
+export interface NavigationType {
+    position: 'left' | 'center' | 'right'
+}
+
+export interface SliderContextType {
     activeId?: string
     prevId?: string
     nextId?: string

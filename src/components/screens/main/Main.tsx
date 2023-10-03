@@ -1,3 +1,9 @@
+import { BestProducts } from 'components/shared/bestProducts/BestProducts'
+
 export function Main() {
-    return <div></div>
+    return (
+        <div>
+            <BestProducts></BestProducts>
+        </div>
+    )
 }

@@ -1,10 +1,10 @@
 import React from 'react'
 import { SliderContext } from 'contexts/Slider.context'
-import { SliderContextValues } from 'shared/types/slider.type'
+import { SliderContextType } from 'shared/types/slider.type'
 
 interface Props {
     children: React.ReactNode
-    valueProvider: Partial<SliderContextValues>
+    valueProvider: Partial<SliderContextType>
 }
 
 export function SliderProvider({ children, valueProvider }: Props) {

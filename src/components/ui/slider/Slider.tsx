@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import styles from './Slider.module.scss'
 import { SliderProvider } from 'providers/Slider.provider'
-import { SliderContextValues } from 'shared/types/slider.type'
+import { NavigationType, SliderContextType } from 'shared/types/slider.type'
 import { Modules } from './modules/Modules'
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
     countSwipe?: number
     transition?: number
     initialIndex?: number
-    navigation?: boolean
+    navigation?: boolean | NavigationType
     pagination?: boolean
 }
 
@@ -27,11 +27,10 @@ export function Slider(props: Props) {
 
     const [transform, setTransform] = useState(0)
     const [indexActive, setIndexActive] = useState(initialIndex)
-    const [valueProvider, setSliderContextValues] =
-        useState<SliderContextValues>({
-            countSwipe,
-            setIndexActive
-        })
+    const [valueProvider, setSliderContextType] = useState<SliderContextType>({
+        countSwipe,
+        setIndexActive
+    })
 
     const slides = useRef<HTMLUListElement>(null)
 
@@ -48,7 +47,7 @@ export function Slider(props: Props) {
         const nextId = childrens[indexActive + 1]?.dataset?.uniqueId
         const prevId = childrens[indexActive - 1]?.dataset?.uniqueId
 
-        const value: SliderContextValues = {
+        const value: SliderContextType = {
             activeId,
             countSwipe,
             nextId,
@@ -57,7 +56,7 @@ export function Slider(props: Props) {
             totalCount: childrens.length
         }
 
-        setSliderContextValues(value)
+        setSliderContextType(value)
     }, [countSwipe, indexActive])
 
     useEffect(() => {
