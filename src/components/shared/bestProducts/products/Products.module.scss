@@ -1,5 +1,5 @@
 .navigation {
-    @media (max-width: 375px) {
+    @media (width <= 375px) {
         display: none;
     }
 }

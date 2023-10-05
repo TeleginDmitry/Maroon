@@ -4,20 +4,20 @@
     padding-left: 100px;
     align-items: center;
 
-    @media (max-width: 768px) {
+    @media (width <= 768px) {
         padding-left: 45px;
         gap: 50px;
     }
 
-    @media (max-width: 570px) {
+    @media (width <= 570px) {
         flex-direction: column;
-        padding: 0px 35px;
+        padding: 0 35px;
     }
 
     .link {
         display: none;
 
-        @media (max-width: 570px) {
+        @media (width <= 570px) {
             display: block;
         }
     }

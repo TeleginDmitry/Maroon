@@ -18,7 +18,7 @@ export function Products() {
     return (
         <Slider
             gap={30}
-            pagination={true}
+            pagination={false}
             navigation={{ position: 'center', className: styles.navigation }}
         >
             {data.map((product) => {

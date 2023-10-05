@@ -103,7 +103,7 @@ export function useSlider({
         if (!slidesRef.current) return
 
         const childrens = slideChildrens(slidesRef)
-        
+
         const newTransform = childrens
             .slice(0, indexActive)
             .reduce((acc, children) => acc - children.offsetWidth - gap, 0)
@@ -114,7 +114,6 @@ export function useSlider({
 
         setTotalCount(childrens.length)
         setNeedUpdate(false)
-
     }, [gap, indexActive, needUpdate])
 
     return {

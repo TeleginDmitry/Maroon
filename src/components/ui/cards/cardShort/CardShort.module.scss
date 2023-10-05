@@ -3,7 +3,7 @@
     width: 270px;
     height: 350px;
 
-    @media (max-width: 375px) {
+    @media (width <= 375px) {
         width: calc(100vw - 70px);
     }
 

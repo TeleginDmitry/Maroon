@@ -4,7 +4,7 @@
     height: 350px;
     display: block;
 
-    @media (max-width: 375px) {
+    @media (width <= 375px) {
         width: calc(100vw - 70px);
     }
 
