@@ -1,7 +1,4 @@
 .slider {
     position: relative;
-
-    &__active {
-        position: relative;
-    }
+    user-select: none;
 }

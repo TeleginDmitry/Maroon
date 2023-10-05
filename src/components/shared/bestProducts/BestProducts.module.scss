@@ -1,25 +1,24 @@
 .wrapper {
     display: flex;
     gap: 80px;
-    padding: 100px 0px 100px 100px;
+    padding-left: 100px;
     align-items: center;
-    .container {
-        display: flex;
+
+    @media (max-width: 768px) {
+        padding-left: 45px;
+        gap: 50px;
+    }
+
+    @media (max-width: 570px) {
         flex-direction: column;
-        gap: 40px;
-        max-width: 240px;
-        .info {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            .title {
-                font-size: 32px;
-                font-weight: 500;
-            }
-            .description {
-                font-size: 18px;
-                line-height: 26.1px;
-            }
+        padding: 0px 35px;
+    }
+
+    .link {
+        display: none;
+
+        @media (max-width: 570px) {
+            display: block;
         }
     }
 }

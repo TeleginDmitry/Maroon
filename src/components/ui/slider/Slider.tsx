@@ -1,103 +1,84 @@
-import { useEffect, useRef, useState } from 'react'
 import styles from './Slider.module.scss'
 import { SliderProvider } from 'providers/Slider.provider'
-import { NavigationType, SliderContextType } from 'shared/types/slider.type'
+import {
+    NavigationType,
+    PaginationType,
+    SliderContextType,
+    SliderLogicType
+} from 'shared/types/slider.type'
 import { Modules } from './modules/Modules'
+import { DraggableCore } from 'react-draggable'
+import { useSlider } from 'hooks/useSlider'
+import { useSliderItem } from 'hooks/useSliderItem'
 
-interface Props {
+interface Props extends SliderLogicType {
     children: React.ReactNode
-    gap?: number
-    countSwipe?: number
-    transition?: number
-    initialIndex?: number
     navigation?: boolean | NavigationType
-    pagination?: boolean
+    pagination?: boolean | PaginationType
 }
 
 export function Slider(props: Props) {
     const {
         children,
         gap = 10,
-        transition = 0.3,
+        duration = 300,
         initialIndex = 0,
         countSwipe = 1,
         navigation = true,
         pagination = true
     } = props
 
-    const [transform, setTransform] = useState(0)
-    const [indexActive, setIndexActive] = useState(initialIndex)
-    const [valueProvider, setSliderContextType] = useState<SliderContextType>({
+    const {
+        onDrag,
+        onStop,
+        slidesRef,
+        translate,
+        indexActive,
+        swipeLeft,
+        swipeRight,
+        totalCount
+    } = useSlider({
         countSwipe,
-        setIndexActive
+        duration,
+        gap,
+        initialIndex
     })
 
-    const slides = useRef<HTMLUListElement>(null)
+    const { activeId, nextId, prevId } = useSliderItem({
+        indexActive,
+        slidesRef
+    })
 
-    function slideChildrens() {
-        return slides.current!.childNodes as NodeListOf<HTMLLIElement>
+    const valueProvider: SliderContextType = {
+        totalCount,
+        indexActive,
+        countSwipe,
+        activeId,
+        nextId,
+        prevId,
+        swipeLeft,
+        swipeRight
     }
-
-    useEffect(() => {
-        if (!slides.current) return
-
-        const childrens = slideChildrens()
-
-        const activeId = childrens[indexActive]?.dataset?.uniqueId
-        const nextId = childrens[indexActive + 1]?.dataset?.uniqueId
-        const prevId = childrens[indexActive - 1]?.dataset?.uniqueId
-
-        const value: SliderContextType = {
-            activeId,
-            countSwipe,
-            nextId,
-            prevId,
-            setIndexActive,
-            totalCount: childrens.length
-        }
-
-        setSliderContextType(value)
-    }, [countSwipe, indexActive])
-
-    useEffect(() => {
-        if (!slides.current) return
-
-        function changeTransform() {
-            let transform = 0
-
-            const childrens = slideChildrens()
-
-            for (let i = 0; i < indexActive; i++) {
-                const children = childrens[i]
-                transform += children.offsetWidth + gap
-            }
-
-            setTransform(transform)
-        }
-
-        changeTransform()
-
-        window.addEventListener('resize', changeTransform)
-
-        return () => {
-            window.removeEventListener('resize', changeTransform)
-        }
-    }, [gap, indexActive])
 
     return (
         <SliderProvider valueProvider={valueProvider}>
             <div className={styles.slider}>
-                <ul
-                    ref={slides}
-                    style={{
-                        gap,
-                        transition: `all ${transition}s`,
-                        transform: `translateX(-${transform}px)`
-                    }}
-                    className={styles.slides}
+                <DraggableCore
+                    enableUserSelectHack={true}
+                    onDrag={onDrag}
+                    onStop={onStop}
                 >
-                    {children}
-                </ul>
+                    <div
+                        ref={slidesRef}
+                        style={{
+                            gap,
+                            transform: `translate3d(${translate}px, 0px, 0px)`
+                        }}
+                        className={styles.slides}
+                    >
+                        {children}
+                    </div>
+                </DraggableCore>
                 {(navigation || pagination) && (
                     <Modules
                         navigation={navigation}

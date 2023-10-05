@@ -1,0 +1,36 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    max-width: 250px;
+
+    @media (max-width: 670px) {
+        padding: 0px 30px;
+    }
+
+    .title {
+        font-size: 32px;
+        font-weight: 500;
+    }
+    .contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            .title {
+                font-size: 18px;
+                font-weight: 500;
+                font-family: 'Mplus 1p-maroon', sans-serif;
+            }
+
+            .value {
+                font-size: 18px;
+                line-height: 26.1px;
+            }
+        }
+    }
+}

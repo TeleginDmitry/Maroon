@@ -2,27 +2,31 @@ import styles from './Pagination.module.scss'
 import { ReactComponent as Line } from 'assets/icons/line.svg'
 import { useContext } from 'react'
 import { SliderContext } from 'contexts/Slider.context'
+import { PaginationType } from 'shared/types/slider.type'
+import { classNames } from 'utils/classNames/classNames'
 
 interface Props {
-    swipeRight(step?: number): void
-    step: number
+    pagination: boolean | PaginationType
 }
 
-export function Pagination({ step, swipeRight }: Props) {
-    const { totalCount, countSwipe } = useContext(SliderContext)
+export function Pagination({ pagination }: Props) {
+    const { totalCount, indexActive } = useContext(SliderContext)
 
-    const maxSteps = Math.ceil(totalCount! / countSwipe!)
+    const { className = '', position = 'center' } =
+        typeof pagination === 'object' ? pagination : {}
 
     return (
-        <div className={styles.pagination}>
-            <p className={styles.page}>{step}</p>
+        <div
+            style={{
+                justifyContent: position
+            }}
+            className={classNames(styles.pagination, {
+                className: !!className
+            })}
+        >
+            <p className={styles.page}>{indexActive! + 1}</p>
             <Line></Line>
-            <button
-                onClick={() => swipeRight(maxSteps)}
-                className={styles.page}
-            >
-                {maxSteps}
-            </button>
+            <p className={styles.page}>{totalCount}</p>
         </div>
     )
 }

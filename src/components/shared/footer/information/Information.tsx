@@ -5,12 +5,10 @@ export function Information() {
     return (
         <div className={styles.information}>
             <p className={styles.text}>
-                Maroon{' '}
-                <span>
-                    <CircleC></CircleC>
-                </span>
-                2020 Все права защищены
-            </p>{' '}
+                <span>Maroon</span>
+                <CircleC></CircleC>
+                <span>2020 Все права защищены</span>
+            </p>
             <a className={styles.text} href='#'>
                 Политика конфиденциальности
             </a>
