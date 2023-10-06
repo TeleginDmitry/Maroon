@@ -1,0 +1,33 @@
+.care {
+    padding: 120px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    background-image: url('../../../assets/images/care.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (width <= 768px) {
+        padding: 100px 30px;
+    }
+
+    @media (width <= 425px) {
+        padding: 60px 30px;
+        gap: 30px;
+    }
+
+    .text {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 48px;
+        max-width: 760px;
+        text-align: center;
+        font-family: Raleway-maroon, sans-serif;
+
+        @media (width <= 425px) {
+            font-size: 22px;
+            line-height: 27.5px;
+        }
+    }
+}
