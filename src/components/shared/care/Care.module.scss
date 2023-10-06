@@ -8,11 +8,11 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    @media (max-width: 768px) {
+    @media (width <= 768px) {
         padding: 100px 30px;
     }
 
-    @media (max-width: 425px) {
+    @media (width <= 425px) {
         padding: 60px 30px;
         gap: 30px;
     }
@@ -23,9 +23,9 @@
         line-height: 48px;
         max-width: 760px;
         text-align: center;
-        font-family: 'Raleway-maroon', sans-serif;
+        font-family: Raleway-maroon, sans-serif;
 
-        @media (max-width: 425px) {
+        @media (width <= 425px) {
             font-size: 22px;
             line-height: 27.5px;
         }

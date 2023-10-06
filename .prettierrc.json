@@ -8,7 +8,5 @@
     "arrowParens": "always",
     "bracketSpacing": true,
     "quoteProps": "as-needed",
-    "spaceBeforeFunctionParen": true,
-    "proseWrap": "always",
-    "jsxEmptyClosingTag": true
+    "proseWrap": "always"
 }
