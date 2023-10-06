@@ -1,0 +1,13 @@
+.screens {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    @media (width <= 768px) {
+        display: none;
+    }
+
+    .screen {
+        font-size: 16px;
+    }
+}

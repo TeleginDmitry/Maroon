@@ -1,0 +1,12 @@
+.burger {
+    display: none;
+
+    @media (width <= 768px) {
+        display: block;
+    }
+
+    .button {
+        height: 20px;
+        width: 30px;
+    }
+}
