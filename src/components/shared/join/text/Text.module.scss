@@ -5,7 +5,7 @@
     text-align: flex-start;
     max-width: 380px;
 
-    @media (max-width: 570px) {
+    @media (width <= 570px) {
         text-align: center;
     }
 

@@ -5,11 +5,11 @@
     gap: 70px;
     margin: 0 auto;
 
-    @media (max-width: 768px) {
+    @media (width <= 768px) {
         padding: 0 45px;
     }
 
-    @media (max-width: 570px) {
+    @media (width <= 570px) {
         flex-direction: column-reverse;
         padding: 0 15px;
         gap: 50px;
