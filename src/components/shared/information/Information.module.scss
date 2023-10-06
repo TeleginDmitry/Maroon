@@ -6,12 +6,17 @@
         padding: 0 0 0 45px;
     }
 
+    @media (width <= 768px) {
+        margin-bottom: 120px;
+    }
+
     @media (width <= 670px) {
         padding: 0 45px;
     }
 
     @media (width <= 425px) {
         padding: 0 15px;
+        margin-bottom: 80px;
     }
 
     .container {
