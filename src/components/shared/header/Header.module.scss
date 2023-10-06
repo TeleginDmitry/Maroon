@@ -7,13 +7,17 @@
     gap: 20px;
     height: 100px;
 
+    &__border {
+        @media (width <= 768px) {
+            border-bottom: 1px solid #dbdce0;
+        }
+    }
+
     @media (width <= 768px) {
         padding: 0 45px;
-        border-bottom: 1px solid #dbdce0;
     }
 
     @media (width <= 375px) {
         padding: 0 15px;
-        border-bottom: none;
     }
 }
