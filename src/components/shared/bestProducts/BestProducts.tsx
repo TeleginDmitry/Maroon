@@ -5,10 +5,10 @@ import { ShowAll } from './showAll/ShowAll'
 
 export function BestProducts() {
     return (
-        <div className={styles.wrapper}>
+        <section className={styles.wrapper}>
             <Information></Information>
             <Products></Products>
             <ShowAll className={styles.link}></ShowAll>
-        </div>
+        </section>
     )
 }

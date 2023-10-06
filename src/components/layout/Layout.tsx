@@ -7,9 +7,9 @@ export function Layout() {
     return (
         <div className={styles.wrapper}>
             <Header></Header>
-            <div className={styles.content}>
+            <main className={styles.content}>
                 <Outlet />
-            </div>
+            </main>
             <Footer></Footer>
         </div>
     )
