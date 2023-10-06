@@ -9,12 +9,21 @@ jobs:
     test:
         runs-on: ubuntu-latest
 
+        strategy:
+            matrix:
+                node-version: [17.x]
+
         steps:
             - name: Checkout код
               uses: actions/checkout@v3
 
+            - name: Staring Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node-version }}
+
             - name: Установка зависимостей
-              run: npm install
+              run: npm ci
 
             - name: Запуск тестов
               run: npm run test
