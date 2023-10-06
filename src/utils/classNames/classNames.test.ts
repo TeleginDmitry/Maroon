@@ -1,5 +1,5 @@
-import { classNames } from './classNames' // Замените на путь к вашему файлу с функцией
+import { classNames } from './classNames'
 
-test('', () => {
+test('Тест на пустоту', () => {
     expect(classNames('')).toBe('')
 })
