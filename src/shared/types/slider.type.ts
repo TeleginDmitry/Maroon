@@ -1,18 +1,52 @@
+import { DraggableData, DraggableEvent } from 'react-draggable'
+
 export interface OptionsType {
     isActive: boolean
     isPrev: boolean
     isNext: boolean
 }
 
+export type PositionType = 'left' | 'center' | 'right'
+
 export interface NavigationType {
-    position: 'left' | 'center' | 'right'
+    position?: PositionType
+    className?: string
+}
+
+export interface PaginationType {
+    position?: PositionType
+    className?: string
 }
 
 export interface SliderContextType {
     activeId?: string
     prevId?: string
     nextId?: string
-    totalCount?: number
+    indexActive: number
+    totalCount: number | null
     countSwipe: number
-    setIndexActive: React.Dispatch<React.SetStateAction<number>>
+    swipeLeft?: () => void
+    swipeRight?: () => void
+}
+
+export type DirectionType = 'right' | 'left' | 'top' | 'bottom'
+
+export interface SliderLogicType {
+    gap?: number
+    countSwipe?: number
+    duration?: number
+    initialIndex?: number
+}
+
+export interface SliderHookReturnType {
+    slidesRef: React.RefObject<HTMLDivElement>
+    translate: number
+    indexActive: number
+    direction: DirectionType | null
+    step: number
+    onDrag: (event: DraggableEvent, data: DraggableData) => void
+    onStop: (event: DraggableEvent, data: DraggableData) => void
+    swipeLeft: () => void
+    swipeRight: () => void
+    totalCount: number | null
 }

@@ -2,30 +2,33 @@ import styles from './Navigation.module.scss'
 import { ReactComponent as LeftArrow } from 'assets/icons/left-arrow.svg'
 import { ReactComponent as RightArrow } from 'assets/icons/right-arrow.svg'
 import { NavigationType } from 'shared/types/slider.type'
+import { useContext } from 'react'
+import { SliderContext } from 'contexts/Slider.context'
+import { classNames } from 'utils/classNames/classNames'
 
 interface Props {
-    swipeLeft(): void
-    swipeRight(step?: number): void
     navigation: boolean | NavigationType
 }
 
-export function Navigation({ swipeLeft, swipeRight, navigation }: Props) {
+export function Navigation({ navigation }: Props) {
+    const { swipeLeft, swipeRight } = useContext(SliderContext)
+
+    const { className = '', position = 'center' } =
+        typeof navigation === 'object' ? navigation : {}
+
     return (
         <div
             style={{
-                justifyContent:
-                    typeof navigation === 'object'
-                        ? 'position' in navigation
-                            ? navigation.position
-                            : 'right'
-                        : 'right'
+                justifyContent: position
             }}
-            className={styles.navigation}
+            className={classNames(styles.navigation, {
+                [className!]: !!className
+            })}
         >
             <button onClick={swipeLeft} className={styles.button}>
                 <LeftArrow></LeftArrow>
             </button>
-            <button onClick={() => swipeRight()} className={styles.button}>
+            <button onClick={swipeRight} className={styles.button}>
                 <RightArrow></RightArrow>
             </button>
         </div>
