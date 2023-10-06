@@ -1,0 +1,26 @@
+name: Run Tests
+
+on:
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout код
+              uses: actions/checkout@v3
+
+            - name: Установка зависимостей
+              run: npm install
+
+            - name: Запуск тестов
+              run: npm test
+
+            - name: Запуск lint
+              run: npm run lint
+
+            - name: Запуск stylelint
+              run: npm run stylelint
