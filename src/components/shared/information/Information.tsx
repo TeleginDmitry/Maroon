@@ -4,11 +4,11 @@ import { Contacts } from './contacts/Contacts'
 
 export function Information() {
     return (
-        <div className={styles.information}>
+        <section className={styles.information}>
             <div className={styles.container}>
                 <Contacts></Contacts>
                 <Map></Map>
             </div>
-        </div>
+        </section>
     )
 }

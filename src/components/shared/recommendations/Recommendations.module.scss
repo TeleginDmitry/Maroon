@@ -1,0 +1,27 @@
+.recommendations {
+    padding: 50px 100px 70px;
+    position: relative;
+
+    @media (width <= 900px) {
+        padding: 50px 45px 60px;
+    }
+
+    @media (width <= 768px) {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    @media (width <= 900px) {
+        padding: 50px 15px 60px;
+    }
+
+    .background {
+        background-image: url('../../../assets/images/header.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        inset: -100px 0 0;
+        z-index: -1;
+    }
+}

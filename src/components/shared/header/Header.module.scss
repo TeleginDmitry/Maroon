@@ -1,18 +1,19 @@
 .header {
     position: relative;
-    padding: 40px 100px;
+    padding: 0 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    height: 100px;
 
     @media (width <= 768px) {
-        padding: 40px 45px;
+        padding: 0 45px;
         border-bottom: 1px solid #dbdce0;
     }
 
     @media (width <= 375px) {
-        padding: 40px 15px;
+        padding: 0 15px;
         border-bottom: none;
     }
 }
