@@ -7,7 +7,7 @@
     left: 70%;
     transform: translateX(-50%);
 
-    @media (max-width: 480px) {
+    @media (width <= 480px) {
         left: 50%;
         text-align: center;
         padding-bottom: 50px;
@@ -19,7 +19,7 @@
         flex-direction: column;
         gap: 30px;
 
-        @media (max-width: 480px) {
+        @media (width <= 480px) {
             gap: 25px;
         }
 
@@ -28,7 +28,7 @@
             font-weight: 500;
             line-height: 40px;
 
-            @media (max-width: 480px) {
+            @media (width <= 480px) {
                 font-size: 28px;
                 line-height: 35px;
             }
@@ -38,7 +38,7 @@
             font-size: 18px;
             line-height: 26.1px;
 
-            @media (max-width: 480px) {
+            @media (width <= 480px) {
                 font-size: 16px;
                 line-height: 22.4px;
             }

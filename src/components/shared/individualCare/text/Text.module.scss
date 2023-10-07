@@ -9,7 +9,7 @@
         text-align: center;
     }
 
-    @media (max-width: 425px) {
+    @media (width <= 425px) {
         gap: 30px;
     }
 
@@ -18,7 +18,7 @@
         flex-direction: column;
         gap: 40px;
 
-        @media (max-width: 425px) {
+        @media (width <= 425px) {
             gap: 25px;
         }
 
@@ -32,7 +32,7 @@
             font-size: 18px;
             line-height: 26.1px;
 
-            @media (max-width: 670px) {
+            @media (width <= 670px) {
                 &:first-of-type {
                     display: none;
                 }

@@ -43,9 +43,8 @@
 
         @media (width <= 670px) {
             flex-direction: column;
-
             gap: 50px;
-            padding: 60px 20px 0px 20px;
+            padding: 60px 20px 0;
 
             &::before {
                 width: 100%;

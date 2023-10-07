@@ -8,7 +8,11 @@ export function IndividualCare() {
             <div className={styles.container}>
                 <Text></Text>
                 <div>
-                    <img className={styles.image} src={image} alt='Индивидуальная забота' />
+                    <img
+                        className={styles.image}
+                        src={image}
+                        alt='Индивидуальная забота'
+                    />
                 </div>
             </div>
         </div>
