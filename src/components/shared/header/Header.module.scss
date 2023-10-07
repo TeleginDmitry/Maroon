@@ -8,9 +8,7 @@
     height: 100px;
 
     &__border {
-        @media (width <= 768px) {
-            border-bottom: 1px solid #dbdce0;
-        }
+        border-bottom: 1px solid #dbdce0;
     }
 
     @media (width <= 768px) {

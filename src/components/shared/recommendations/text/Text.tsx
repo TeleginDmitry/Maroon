@@ -1,8 +1,9 @@
 import { Button } from 'components/ui/button/Button'
-import styles from './Title.module.scss'
+import styles from './Text.module.scss'
 import { Link } from 'react-router-dom'
+import { UNKNOWN_SCREEN } from 'configs/screens.config'
 
-export function Title() {
+export function Text() {
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
@@ -11,7 +12,7 @@ export function Title() {
                     Натуральная косметика для бережного ухода за кожей
                 </p>
             </div>
-            <Link to={'#'}>
+            <Link to={UNKNOWN_SCREEN}>
                 <Button>Подробнее</Button>
             </Link>
         </div>

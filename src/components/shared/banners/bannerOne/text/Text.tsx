@@ -7,15 +7,14 @@ export function Text() {
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
-                <h1 className={styles.title}>Присоединяйтесь к нам</h1>
+                <h1 className={styles.title}>Встречайте весну вместе с нами</h1>
                 <p className={styles.description}>
-                    Подпишитесь на наш аккаунт @marooncare и узнавайте о новиках
-                    и акциях первыми
+                    Попробуйте новую коллекцию ухаживающих средств для лица с
+                    SPF защитой
                 </p>
             </div>
-
             <Link to={UNKNOWN_SCREEN}>
-                <Button>Подписаться</Button>
+                <Button>Подробнее</Button>
             </Link>
         </div>
     )

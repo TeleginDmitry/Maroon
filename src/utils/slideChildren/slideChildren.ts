@@ -1,4 +1,4 @@
-function slideChildrens(slidesRef: React.RefObject<HTMLElement>) {
+function slideChildren(slidesRef: React.RefObject<HTMLElement>) {
     if (!slidesRef.current) return []
 
     const childrens = slidesRef.current!.childNodes as NodeListOf<HTMLElement>
@@ -7,4 +7,4 @@ function slideChildrens(slidesRef: React.RefObject<HTMLElement>) {
     return childrensArray
 }
 
-export { slideChildrens }
+export { slideChildren }

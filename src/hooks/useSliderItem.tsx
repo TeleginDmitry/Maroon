@@ -1,5 +1,5 @@
 import { useState, useLayoutEffect } from 'react'
-import { slideChildrens } from 'utils/slideChildrens/slideChildrens'
+import { slideChildren } from 'utils/slideChildren/slideChildren'
 
 interface Props {
     slidesRef: React.RefObject<HTMLElement>
@@ -14,11 +14,11 @@ export function useSliderItem({ indexActive, slidesRef }: Props) {
     useLayoutEffect(() => {
         if (!slidesRef.current) return
 
-        const childrens = slideChildrens(slidesRef)!
+        const children = slideChildren(slidesRef)!
 
-        const activeId = childrens[indexActive]?.dataset?.uniqueId
-        const nextId = childrens[indexActive + 1]?.dataset?.uniqueId
-        const prevId = childrens[indexActive - 1]?.dataset?.uniqueId
+        const activeId = children[indexActive]?.dataset?.uniqueId
+        const nextId = children[indexActive + 1]?.dataset?.uniqueId
+        const prevId = children[indexActive - 1]?.dataset?.uniqueId
 
         setActiveId(activeId)
         setNextId(nextId)
