@@ -5,7 +5,7 @@ import {
     SliderLogicType
 } from 'shared/types/slider.type'
 import { DraggableData, DraggableEvent } from 'react-draggable'
-import { slideChildrens } from 'utils/slideChildrens/slideChildrens'
+import { slideChildren } from 'utils/slideChildren/slideChildren'
 
 export function useSlider({
     countSwipe = 1,
@@ -102,9 +102,9 @@ export function useSlider({
     useEffect(() => {
         if (!slidesRef.current) return
 
-        const childrens = slideChildrens(slidesRef)
+        const children = slideChildren(slidesRef)
 
-        const newTransform = childrens
+        const newTransform = children
             .slice(0, indexActive)
             .reduce((acc, children) => acc - children.offsetWidth - gap, 0)
 
@@ -112,7 +112,7 @@ export function useSlider({
             setTranslate(newTransform)
         })
 
-        setTotalCount(childrens.length)
+        setTotalCount(children.length)
         setNeedUpdate(false)
     }, [gap, indexActive, needUpdate])
 
