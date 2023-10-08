@@ -4,7 +4,7 @@ import { Contacts } from './contacts/Contacts'
 
 export function Information() {
     return (
-        <section className={styles.information}>
+        <section className={styles.wrapper}>
             <div className={styles.container}>
                 <Contacts></Contacts>
                 <Map></Map>

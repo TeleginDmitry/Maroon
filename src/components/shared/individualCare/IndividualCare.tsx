@@ -4,7 +4,7 @@ import { Text } from './text/Text'
 
 export function IndividualCare() {
     return (
-        <div className={styles.wrapper}>
+        <section className={styles.wrapper}>
             <div className={styles.container}>
                 <Text></Text>
                 <div>
@@ -15,6 +15,6 @@ export function IndividualCare() {
                     />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

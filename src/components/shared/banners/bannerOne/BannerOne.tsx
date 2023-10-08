@@ -3,9 +3,9 @@ import { Text } from './text/Text'
 
 export function BannerOne() {
     return (
-        <div className={styles.wrapper}>
+        <section className={styles.wrapper}>
             <Text></Text>
             <div className={styles.background}></div>
-        </div>
+        </section>
     )
 }

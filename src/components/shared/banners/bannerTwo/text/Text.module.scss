@@ -1,0 +1,24 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+
+    @media (width <= 425px) {
+        gap: 30px;
+    }
+
+    .text {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 48px;
+        max-width: 760px;
+        text-align: center;
+        font-family: Raleway-maroon, sans-serif;
+
+        @media (width <= 425px) {
+            font-size: 22px;
+            line-height: 27.5px;
+        }
+    }
+}

@@ -5,9 +5,10 @@ import { Screens } from './screens/Screens'
 
 interface Props {
     isActiveMenu: boolean
+    toggleActiveMenu(): void
 }
 
-export function Menu({ isActiveMenu }: Props) {
+export function Menu({ isActiveMenu, toggleActiveMenu }: Props) {
     return (
         <div
             className={classNames(styles.menu, {
@@ -15,8 +16,8 @@ export function Menu({ isActiveMenu }: Props) {
             })}
         >
             <div className={styles.container}>
-                <Screens></Screens>
-                <Networks></Networks>
+                <Screens onClick={toggleActiveMenu}></Screens>
+                <Networks onClick={toggleActiveMenu}></Networks>
             </div>
         </div>
     )

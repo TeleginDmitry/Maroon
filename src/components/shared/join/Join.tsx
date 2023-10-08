@@ -4,9 +4,9 @@ import { Text } from './text/Text'
 
 export function Join() {
     return (
-        <div className={styles.join}>
+        <section className={styles.wrapper}>
             <Images></Images>
             <Text></Text>
-        </div>
+        </section>
     )
 }
