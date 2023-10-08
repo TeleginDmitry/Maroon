@@ -6,7 +6,7 @@ import { classNames } from 'utils/classNames/classNames'
 
 interface Props {
     title: string
-    children: string
+    children: string | React.ReactNode
 }
 
 export function Item({ title, children }: Props) {

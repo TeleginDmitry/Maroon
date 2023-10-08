@@ -6,7 +6,7 @@
     }
 
     .header {
-        padding: 15px 10px 15px 0;
+        padding: 20px 10px 20px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -25,13 +25,11 @@
 
     .container {
         height: 0;
-        transition: all 0.5s;
         overflow: hidden;
 
         &__active {
-            height: 100px;
+            height: auto;
             margin-bottom: 15px;
-            overflow-y: auto;
         }
 
         .body {

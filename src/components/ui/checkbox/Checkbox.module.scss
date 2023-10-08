@@ -1,0 +1,27 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    .checkbox {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 1px solid #cdcdcd;
+        padding: 2px;
+
+        .background {
+            border-radius: 50%;
+            height: 100%;
+
+            &__checked {
+                background-color: #122947;
+            }
+        }
+    }
+
+    span {
+        font-size: 16px;
+        font-family: 'Mplus 1p-maroon', sans-serif;
+    }
+}
