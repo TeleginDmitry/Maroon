@@ -17,11 +17,11 @@
                 }
             ],
             "volume": "30ml 100g",
-            "price": 890
+            "price": 1400
         },
         {
             "id": 2,
-            "image": "https://s3-alpha-sig.figma.com/img/74c5/9f3b/1752eb117aab6944bd8f50f5956343d9?Expires=1697414400&Signature=j1Yrd9oaOdPJaZ7tAhHsJWi7oA~1MGnDD3MSE5lkqL-IItPh6t7CX9-s8b8Nk-7iRbMve6dqHnNaqO-IViKkIpbZ4U6uc5EQJub2fNrwHKCysmJvbg4U~9TSjVT7YX7R-HfmAvpyDL6orTT0eYFhf6aJFE3UtoagR8PBoSaSud28dZ43qvOCetTPdUbV0cVIjp5v2ZR6QV0dGd1SuYlKd10~vG456MhYt0RBodTK~YIE6Cguao7ae~kx6h5tpiaBj~RkdU1~5wiRpYjhL1Rch9OiNgxuORRq79GmlmrcD0qxlZijMicvwlF17NBWHuH1pAjQEvLEt2CjKbQBR9BCeQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+            "image": "https://s3-alpha-sig.figma.com/img/58e4/8ece/1a6bbf4e87dfe8aa58254a7f8b4ca2c2?Expires=1697414400&Signature=lu3OczVNNUZfWzI4crSEygN7ZuXFOK3sYGWZPLP61u5rRC7KktSC8ZJYyfYKQZwhVC0Il3WixOMZe9JylvMWyNExlHCysF5U-4~lfb6zBSdULRAeAHxnxwj4YF8ZmXuyZ5wauGs60C~bj-SBxzc3ce~RK0rZCmsvLy~TQFrPoFc5g6IT5b03JaYupTdt9lGUw~vzwPJC7WSXGHlfKLg6jpFrq-pppW0TeXaCsjiy3HFTupn2ZQRF6u4P4MNwcoIANu3HAVOtRdPCjjbJEF921ZgTgfMOEo5y~mte9VEnt42yruyN~iV6u1PHQNvR9AN99CvNZfm7nfW9MZ~S-Yqs7w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
             "name": "Rose",
             "title": "крем для лица",
             "description": "Увлажняющий крем идеально подходит для повседневного ухода за молодой кожей. Крем равномерно распределяется по поверхности благодаря легкой текстуре, обеспечивает глубокое увлажнение, регенерацию клеток. ",
@@ -35,8 +35,8 @@
                     "body": "Нанесите крем на очищенную кожу лица легкими массажными круговыми движениями, избегая области вокруг глаз. Подходит для дневного и ночного ухода. "
                 }
             ],
-            "volume": "30ml 100g",
-            "price": 890
+            "volume": "350ml",
+            "price": 1100
         },
         {
             "id": 3,
@@ -54,12 +54,12 @@
                     "body": "Нанесите крем на очищенную кожу лица легкими массажными круговыми движениями, избегая области вокруг глаз. Подходит для дневного и ночного ухода. "
                 }
             ],
-            "volume": "30ml 100g",
-            "price": 890
+            "volume": "30ml",
+            "price": 600
         },
         {
             "id": 4,
-            "image": "https://s3-alpha-sig.figma.com/img/74c5/9f3b/1752eb117aab6944bd8f50f5956343d9?Expires=1697414400&Signature=j1Yrd9oaOdPJaZ7tAhHsJWi7oA~1MGnDD3MSE5lkqL-IItPh6t7CX9-s8b8Nk-7iRbMve6dqHnNaqO-IViKkIpbZ4U6uc5EQJub2fNrwHKCysmJvbg4U~9TSjVT7YX7R-HfmAvpyDL6orTT0eYFhf6aJFE3UtoagR8PBoSaSud28dZ43qvOCetTPdUbV0cVIjp5v2ZR6QV0dGd1SuYlKd10~vG456MhYt0RBodTK~YIE6Cguao7ae~kx6h5tpiaBj~RkdU1~5wiRpYjhL1Rch9OiNgxuORRq79GmlmrcD0qxlZijMicvwlF17NBWHuH1pAjQEvLEt2CjKbQBR9BCeQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+            "image": "https://s3-alpha-sig.figma.com/img/51df/3fe6/f2b6c7383e64940d6fdd415ce9fbb3dc?Expires=1697414400&Signature=hyPU-t1kMWFR-muf5CJrS8SBiY~MbifPG-5ygGTXrYdyVu12-czgfLQzXwrfYcYUQ0coQnCpze~-1ru2FXMKDzS0Z3DmWc2ens9FC8uIbR3HZipolpHCbpCnh5JYji0UI0yw6PHmZPQQnsX6fIUTT-duAwDItDZsW5KDiPdNCEpKC-xoDp3~bRVh9v5ysHiwtdhWteYGZBUz4vlfIVtiyh6jTXX-NAtFWPB32jSRSb4xtjOP4pbNuc8ZXMgoOxWA49GPM0Ey5Gq~VNQHQZirLOm5NDBYDFi92wBhmvNLXv7LDkv33jRX0XYn~5cHqMWovao5kyeCnilC9D4xRruBYA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
             "name": "Rose",
             "title": "крем для лица",
             "description": "Увлажняющий крем идеально подходит для повседневного ухода за молодой кожей. Крем равномерно распределяется по поверхности благодаря легкой текстуре, обеспечивает глубокое увлажнение, регенерацию клеток. ",
@@ -73,12 +73,12 @@
                     "body": "Нанесите крем на очищенную кожу лица легкими массажными круговыми движениями, избегая области вокруг глаз. Подходит для дневного и ночного ухода. "
                 }
             ],
-            "volume": "30ml 100g",
-            "price": 890
+            "volume": "100g",
+            "price": 950
         },
         {
             "id": 5,
-            "image": "https://s3-alpha-sig.figma.com/img/74c5/9f3b/1752eb117aab6944bd8f50f5956343d9?Expires=1697414400&Signature=j1Yrd9oaOdPJaZ7tAhHsJWi7oA~1MGnDD3MSE5lkqL-IItPh6t7CX9-s8b8Nk-7iRbMve6dqHnNaqO-IViKkIpbZ4U6uc5EQJub2fNrwHKCysmJvbg4U~9TSjVT7YX7R-HfmAvpyDL6orTT0eYFhf6aJFE3UtoagR8PBoSaSud28dZ43qvOCetTPdUbV0cVIjp5v2ZR6QV0dGd1SuYlKd10~vG456MhYt0RBodTK~YIE6Cguao7ae~kx6h5tpiaBj~RkdU1~5wiRpYjhL1Rch9OiNgxuORRq79GmlmrcD0qxlZijMicvwlF17NBWHuH1pAjQEvLEt2CjKbQBR9BCeQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+            "image": "https://s3-alpha-sig.figma.com/img/1928/c77d/e65c79848a14dd30e3930eb9db4f6a5e?Expires=1697414400&Signature=An59c7j8REmdKdtoh2jYkFp34a1UTs8Wsj8f~sLsu278N-2dcNPaGeqnoWmhcr45c-~A9-1JC9bVd9hu-mcc-IdYAuNbnKf6D2Rhoet6ksABUauWWexS57~3Ze7Xwylw1MUXW21HL2rghaScko~eQFBfA2YcaBc2IY~-nG8Thad6ciHFoEZHCJiI2fIMrMKxMaRjJW9sghWqC4i2i5UnqZ-wm1lO7XQLv2N0u5hlc3RlS3yPeeRMi4i1wBDHaML~WWc1OyixS-QrLVdjbnlNXVKhAJLjqbvQPhyzPLaRG66FXZhVh1jrYJG9UcDwfgFAkH-wUPAE6IK23ThMwqHFLQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
             "name": "Rose",
             "title": "крем для лица",
             "description": "Увлажняющий крем идеально подходит для повседневного ухода за молодой кожей. Крем равномерно распределяется по поверхности благодаря легкой текстуре, обеспечивает глубокое увлажнение, регенерацию клеток. ",
@@ -93,11 +93,11 @@
                 }
             ],
             "volume": "30ml 100g",
-            "price": 890
+            "price": 700
         },
         {
             "id": 6,
-            "image": "https://s3-alpha-sig.figma.com/img/74c5/9f3b/1752eb117aab6944bd8f50f5956343d9?Expires=1697414400&Signature=j1Yrd9oaOdPJaZ7tAhHsJWi7oA~1MGnDD3MSE5lkqL-IItPh6t7CX9-s8b8Nk-7iRbMve6dqHnNaqO-IViKkIpbZ4U6uc5EQJub2fNrwHKCysmJvbg4U~9TSjVT7YX7R-HfmAvpyDL6orTT0eYFhf6aJFE3UtoagR8PBoSaSud28dZ43qvOCetTPdUbV0cVIjp5v2ZR6QV0dGd1SuYlKd10~vG456MhYt0RBodTK~YIE6Cguao7ae~kx6h5tpiaBj~RkdU1~5wiRpYjhL1Rch9OiNgxuORRq79GmlmrcD0qxlZijMicvwlF17NBWHuH1pAjQEvLEt2CjKbQBR9BCeQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+            "image": "https://s3-alpha-sig.figma.com/img/a432/d80a/5d25ac511f0144637482c081f7e659c1?Expires=1697414400&Signature=JJdtQmGBnFq3Cck02ixyU80h0zaOlH5wcIdafqhYYEKYvej64ijX10p64QsmfpGb56-CQKeUNvs8qq2i2jPNUYdoUZ2YSDEe2Y5pwbnpT6mexG0rF5L0l-WDj88hJcLTGxgRS-qpcdoXIq2NCAdRLeG2AerB1BHT7wg5015hkEZh8wzue0Rj9o0hUGHVuHFQqBPzgArOSsG4WZS0fzd36iwjtjmX5FSEe4Ew2QxqyN2TPsE~ImytVXJKkJ-3LOFv1MXAJ6HJyQw3MgCR7obk94jGJYGdi3Lb6afw~b2MzpMh1xL1UJBPJKFS1IVFXtx6KIG6O3onSj3wQUGt2~U3cg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
             "name": "Rose",
             "title": "крем для лица",
             "description": "Увлажняющий крем идеально подходит для повседневного ухода за молодой кожей. Крем равномерно распределяется по поверхности благодаря легкой текстуре, обеспечивает глубокое увлажнение, регенерацию клеток. ",
@@ -112,7 +112,7 @@
                 }
             ],
             "volume": "30ml 100g",
-            "price": 890
+            "price": 1000
         },
         {
             "id": 7,
@@ -135,7 +135,7 @@
         },
         {
             "id": 8,
-            "image": "https://s3-alpha-sig.figma.com/img/74c5/9f3b/1752eb117aab6944bd8f50f5956343d9?Expires=1697414400&Signature=j1Yrd9oaOdPJaZ7tAhHsJWi7oA~1MGnDD3MSE5lkqL-IItPh6t7CX9-s8b8Nk-7iRbMve6dqHnNaqO-IViKkIpbZ4U6uc5EQJub2fNrwHKCysmJvbg4U~9TSjVT7YX7R-HfmAvpyDL6orTT0eYFhf6aJFE3UtoagR8PBoSaSud28dZ43qvOCetTPdUbV0cVIjp5v2ZR6QV0dGd1SuYlKd10~vG456MhYt0RBodTK~YIE6Cguao7ae~kx6h5tpiaBj~RkdU1~5wiRpYjhL1Rch9OiNgxuORRq79GmlmrcD0qxlZijMicvwlF17NBWHuH1pAjQEvLEt2CjKbQBR9BCeQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+            "image": "https://s3-alpha-sig.figma.com/img/d93d/5af7/e041dae6ffb7b3c0253bc429b6e36783?Expires=1697414400&Signature=Ij2z~yAV1ncdM294~2cEmnf5eqHN4MeGbr6uMvk2wFWNmlcK1om-Az1nL2QlW9tZWwiYiRM7xXO2u5-H9waY7Fg-0U3xrvwc-6Uix~HHn1Pwij8OLUdWYO7IPNebXEqtzTGfZY38~B0am7XDgOHeqhLMu5gkBj-xBZJUuLUsg16zb8uF~pma76p-sC1sJBfGUmYY7Qj1FxGl0e97QU3phSFJExQGXdQHgaEu9Ir7WOOYo2agCXDaa4t04T4Bz03F9Bk8ZLelDrOw6BZTp0VIJwA3Ovjikqdk9OmqDFNNtaoMNaApOSYWJYe7oNNFsJhByjnSpfO~-bl7oy5437Y3-w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
             "name": "Rose",
             "title": "крем для лица",
             "description": "Увлажняющий крем идеально подходит для повседневного ухода за молодой кожей. Крем равномерно распределяется по поверхности благодаря легкой текстуре, обеспечивает глубокое увлажнение, регенерацию клеток. ",
@@ -154,7 +154,7 @@
         },
         {
             "id": 9,
-            "image": "https://s3-alpha-sig.figma.com/img/74c5/9f3b/1752eb117aab6944bd8f50f5956343d9?Expires=1697414400&Signature=j1Yrd9oaOdPJaZ7tAhHsJWi7oA~1MGnDD3MSE5lkqL-IItPh6t7CX9-s8b8Nk-7iRbMve6dqHnNaqO-IViKkIpbZ4U6uc5EQJub2fNrwHKCysmJvbg4U~9TSjVT7YX7R-HfmAvpyDL6orTT0eYFhf6aJFE3UtoagR8PBoSaSud28dZ43qvOCetTPdUbV0cVIjp5v2ZR6QV0dGd1SuYlKd10~vG456MhYt0RBodTK~YIE6Cguao7ae~kx6h5tpiaBj~RkdU1~5wiRpYjhL1Rch9OiNgxuORRq79GmlmrcD0qxlZijMicvwlF17NBWHuH1pAjQEvLEt2CjKbQBR9BCeQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+            "image": "https://s3-alpha-sig.figma.com/img/aaf0/223d/32704ccb6e6099dd96659fe079549975?Expires=1697414400&Signature=Q5ElqpEM0AWVJinRp1mp~k8nRpgQKThD56Gpp99jJRAUqJB-GUXCFTOoygAdQdwh7tR8KQ9bBlQ~oNdJPzuo0z5xN9FDzDje~1TcX0feEiMGQ6YdYu2gAmoR2oAmhaBm2mJVxKz4eB5RvNB6Isb8hm9~oOaV-stzG2fu9iokKeHpNo384u~WiNg3FKfow~w6pc-t6lfFsSP9idLuGs99UxITKxU-ac0g4OmuJ4AqtIOncfUiDYHhoa2ORxTgZCUabE1R8P6Dzkdn8VrUoMS9nQvF80I0eSiEa5AGBIu23T8FNTjGIlq6GPB4VNetDDff3neiL1JQ~fOf5yXH9pnkdA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
             "name": "Rose",
             "title": "крем для лица",
             "description": "Увлажняющий крем идеально подходит для повседневного ухода за молодой кожей. Крем равномерно распределяется по поверхности благодаря легкой текстуре, обеспечивает глубокое увлажнение, регенерацию клеток. ",
@@ -173,9 +173,9 @@
         },
         {
             "id": 10,
-            "image": "https://s3-alpha-sig.figma.com/img/74c5/9f3b/1752eb117aab6944bd8f50f5956343d9?Expires=1697414400&Signature=j1Yrd9oaOdPJaZ7tAhHsJWi7oA~1MGnDD3MSE5lkqL-IItPh6t7CX9-s8b8Nk-7iRbMve6dqHnNaqO-IViKkIpbZ4U6uc5EQJub2fNrwHKCysmJvbg4U~9TSjVT7YX7R-HfmAvpyDL6orTT0eYFhf6aJFE3UtoagR8PBoSaSud28dZ43qvOCetTPdUbV0cVIjp5v2ZR6QV0dGd1SuYlKd10~vG456MhYt0RBodTK~YIE6Cguao7ae~kx6h5tpiaBj~RkdU1~5wiRpYjhL1Rch9OiNgxuORRq79GmlmrcD0qxlZijMicvwlF17NBWHuH1pAjQEvLEt2CjKbQBR9BCeQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+            "image": "https://s3-alpha-sig.figma.com/img/c810/090d/04c0916abe1fbbb4078a5f66cc83fffa?Expires=1697414400&Signature=byc3EpcuteRPB~5QNCgg0SzbnoduPzKgvpns5Zw5p8FTFaiSsDeGE8IQ9hpPIEaBCWgwsgd994D6L~w-cSqIGWanJLCP9w0l-W6cSV7sx49v~4QVq6Xr8CP60k3E2w6PKLYkD0Jv4THtmKLndJe81R41rN4DmuhUtcUjVpOMjBH9V6KmKkbOXWX3SLrFmQjgXawdua-e7sOw0GSH4ldpqHkRMaBbRL8eQ8hkhnTcXAgduHiUZzVeT7XTofrcZyugYL8Bs2-OcuiGY7Fmal9JBuCQg0g4AchPQuToH33hjV1V7XEsoc8RBqozmfN6K~FXZsL1WLd27DuTZHfxdOwscw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
             "name": "Rose",
-            "title": "крем для лица",
+            "title": "крем для кожи",
             "description": "Увлажняющий крем идеально подходит для повседневного ухода за молодой кожей. Крем равномерно распределяется по поверхности благодаря легкой текстуре, обеспечивает глубокое увлажнение, регенерацию клеток. ",
             "accordion": [
                 {
@@ -187,8 +187,8 @@
                     "body": "Нанесите крем на очищенную кожу лица легкими массажными круговыми движениями, избегая области вокруг глаз. Подходит для дневного и ночного ухода. "
                 }
             ],
-            "volume": "30ml 100g",
-            "price": 890
+            "volume": "30ml",
+            "price": 1500
         }
     ]
 }

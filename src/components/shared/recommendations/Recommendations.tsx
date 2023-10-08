@@ -4,7 +4,7 @@ import { Text } from './text/Text'
 
 export function Recommendations() {
     return (
-        <section className={styles.recommendations}>
+        <section className={styles.wrapper}>
             <Text></Text>
             <Cards></Cards>
             <div className={styles.background}></div>

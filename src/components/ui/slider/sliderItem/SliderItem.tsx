@@ -2,12 +2,14 @@ import { OptionsType } from 'shared/types/slider.type'
 import styles from './SliderItem.module.scss'
 import { SliderContext } from 'contexts/Slider.context'
 import { useContext, useId, useRef } from 'react'
+import { classNames } from 'utils/classNames/classNames'
 
 interface Props {
     children: ((options: OptionsType) => React.ReactNode) | React.ReactNode
+    className?: string
 }
 
-export function SliderItem({ children }: Props) {
+export function SliderItem({ children, className }: Props) {
     const { activeId, nextId, prevId } = useContext(SliderContext)
 
     const id = useId()
@@ -21,7 +23,11 @@ export function SliderItem({ children }: Props) {
     }
 
     return (
-        <div ref={slider} className={styles.slider} data-unique-id={id}>
+        <div
+            ref={slider}
+            className={classNames(styles.slider, { [className!]: !!className })}
+            data-unique-id={id}
+        >
             {typeof children === 'function' ? children(options) : children}
         </div>
     )

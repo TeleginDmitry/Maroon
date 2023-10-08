@@ -23,7 +23,7 @@ export function Products() {
         >
             {data.map((product) => {
                 return (
-                    <SliderItem key={product.id}>
+                    <SliderItem className={styles.slide} key={product.id}>
                         <CardShort product={product}></CardShort>
                     </SliderItem>
                 )

@@ -1,11 +1,7 @@
 .product {
     position: relative;
-    width: 270px;
+    width: 100%;
     height: 350px;
-
-    @media (width <= 375px) {
-        width: calc(100vw - 70px);
-    }
 
     .image {
         width: 100%;

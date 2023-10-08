@@ -20,7 +20,10 @@ export function Burger() {
                     <BurgerSvg></BurgerSvg>
                 )}
             </button>
-            <Menu isActiveMenu={isActiveMenu}></Menu>
+            <Menu
+                toggleActiveMenu={toggleActiveMenu}
+                isActiveMenu={isActiveMenu}
+            ></Menu>
         </div>
     )
 }
