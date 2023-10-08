@@ -2,13 +2,14 @@
     position: relative;
     display: none;
 
-    @media (max-width: 660px) {
+    @media (width <= 660px) {
         display: block;
         width: 100%;
     }
 
     .accordion {
-      width: 100%;
+        width: 100%;
+
         .items {
             display: flex;
             flex-direction: column;
