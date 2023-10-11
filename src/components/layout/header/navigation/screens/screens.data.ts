@@ -20,19 +20,19 @@ export const textLinks = [
     {
         id: 1,
         to: CATALOG_SCREEN, 
-        data: "Каталог",
+        text: "Каталог",
     },
 
     {
         id: 2,
         to: ABOUT_SCREEN, 
-        data: "О нас",
+        text: "О нас",
 
     },
 
     {
         id: 3,
         to: CONTACTS_SCREEN,
-        data: "Контакты",
+        text: "Контакты",
     },
 ]

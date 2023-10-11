@@ -4,12 +4,12 @@ import styles from './Screens.module.scss'
 
 const Screens = () => {
     return (
-        <nav>
+        <nav className={styles.nav}>
             <ul className={styles.texts}>
-                {textLinks.map(({ id, to, data }) => (
+                {textLinks.map(({ id, to, text }) => (
                     <li key={id} className={styles.text}>
                         <Link to={to} className={styles.link}>
-                            {data}
+                            {text}
                         </Link>
                     </li>
                 ))}
@@ -19,7 +19,7 @@ const Screens = () => {
                 {iconsLinks.map(({ id, to, Icon }) => (
                     <li key={id} className={styles.text}>
                         <Link to={to} className={styles.link}>
-                            {Icon}
+                            <Icon />
                         </Link>
                     </li>
                 ))}
