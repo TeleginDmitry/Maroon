@@ -1,6 +1,6 @@
 import { classNames } from 'utils/classNames/classNames'
 import styles from './Menu.module.scss'
-import { Networks } from 'components/ui/networks/Networks'
+import { Networks } from 'components/shared/networks/Networks'
 import { Screens } from './screens/Screens'
 
 interface Props {
