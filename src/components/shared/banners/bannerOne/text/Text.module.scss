@@ -1,0 +1,47 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 285px;
+    position: relative;
+    left: 70%;
+    transform: translateX(-50%);
+
+    @media (width <= 480px) {
+        left: 50%;
+        text-align: center;
+        padding-bottom: 50px;
+        gap: 30px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        @media (width <= 480px) {
+            gap: 25px;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 40px;
+
+            @media (width <= 480px) {
+                font-size: 28px;
+                line-height: 35px;
+            }
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 26.1px;
+
+            @media (width <= 480px) {
+                font-size: 16px;
+                line-height: 22.4px;
+            }
+        }
+    }
+}

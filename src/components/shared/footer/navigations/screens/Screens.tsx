@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import styles from './Screens.module.scss'
-import { screens } from './screens.data'
+import { screens } from 'shared/data/screens.data'
 
 export function Screens() {
     return (

@@ -1,12 +1,13 @@
 .product {
     position: relative;
-    width: 270px;
+    width: 100%;
     height: 350px;
 
     .image {
-        width: 270px;
+        width: 100%;
         height: 350px;
         user-select: none;
+        object-fit: cover;
     }
 
     .container {

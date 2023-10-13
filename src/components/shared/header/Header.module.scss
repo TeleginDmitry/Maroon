@@ -1,0 +1,21 @@
+.header {
+    position: relative;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    height: 100px;
+
+    &__border {
+        border-bottom: 1px solid #dbdce0;
+    }
+
+    @media (width <= 768px) {
+        padding: 0 45px;
+    }
+
+    @media (width <= 375px) {
+        padding: 0 15px;
+    }
+}

@@ -1,13 +1,19 @@
 .product {
     position: relative;
-    width: 270px;
     height: 350px;
-    display: block;
+    width: 100%;
+
+    .link {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+    }
 
     .image {
-        width: 270px;
+        width: 100%;
         height: 350px;
         user-select: none;
+        object-fit: cover;
     }
 
     .container {
@@ -26,15 +32,6 @@
             justify-content: space-between;
             gap: 10px;
 
-            &:first-child {
-                span {
-                    color: #122947;
-                    font-size: 16px;
-                    font-family: Raleway-maroon, sans-serif;
-                    font-weight: 500;
-                }
-            }
-
             &:last-child {
                 span {
                     color: #9a9da0;
@@ -42,6 +39,24 @@
                     font-family: 'Mplus 1p-maroon', sans-serif;
                     font-weight: 400;
                 }
+            }
+
+            &:first-child {
+                span {
+                    color: #122947;
+                    font-size: 16px;
+                    font-family: Raleway-maroon, sans-serif;
+                    font-weight: 500;
+
+                    &:last-child {
+                        font-family: 'Mplus 1p-maroon', sans-serif;
+                    }
+                }
+            }
+
+            .icon {
+                width: 10px;
+                height: 12px;
             }
         }
     }

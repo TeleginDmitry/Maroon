@@ -1,0 +1,11 @@
+.screens {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+
+    .screen {
+        font-size: 32px;
+        font-weight: 500;
+    }
+}

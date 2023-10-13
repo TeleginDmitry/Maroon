@@ -6,14 +6,15 @@ import { classNames } from 'utils/classNames/classNames'
 
 interface Props {
     children: ((options: OptionsType) => React.ReactNode) | React.ReactNode
+    className?: string
 }
 
-export function SliderItem({ children }: Props) {
+export function SliderItem({ children, className }: Props) {
     const { activeId, nextId, prevId } = useContext(SliderContext)
 
     const id = useId()
 
-    const slider = useRef<HTMLLIElement>(null)
+    const slider = useRef<HTMLDivElement>(null)
 
     const options: OptionsType = {
         isNext: nextId === id,
@@ -22,14 +23,12 @@ export function SliderItem({ children }: Props) {
     }
 
     return (
-        <li
+        <div
             ref={slider}
-            className={classNames(styles.slider, {
-                [styles.slider__active]: id === activeId
-            })}
+            className={classNames(styles.slider, { [className!]: !!className })}
             data-unique-id={id}
         >
             {typeof children === 'function' ? children(options) : children}
-        </li>
+        </div>
     )
 }

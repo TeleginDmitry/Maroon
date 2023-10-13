@@ -1,0 +1,17 @@
+.wrapper {
+    padding: 0 100px;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    margin: 0 auto;
+
+    @media (width <= 768px) {
+        padding: 0 45px;
+    }
+
+    @media (width <= 570px) {
+        flex-direction: column-reverse;
+        padding: 0 15px;
+        gap: 50px;
+    }
+}

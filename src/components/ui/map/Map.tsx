@@ -19,6 +19,7 @@ export function Map() {
         >
             <MapInstance
                 className={styles.map}
+                width={'100%'}
                 defaultState={{
                     center: [55.75, 37.57],
                     zoom: 9,

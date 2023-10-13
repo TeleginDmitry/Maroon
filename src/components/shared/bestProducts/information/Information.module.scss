@@ -1,0 +1,34 @@
+.information {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 240px;
+
+    @media (width <= 570px) {
+        text-align: center;
+
+        .link {
+            display: none;
+        }
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        @media (width <= 570px) {
+            gap: 25px;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 500;
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 26.1px;
+        }
+    }
+}

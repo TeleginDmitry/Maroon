@@ -1,0 +1,42 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    max-width: 340px;
+    width: 100%;
+
+    @media (width <= 670px) {
+        text-align: center;
+    }
+
+    @media (width <= 425px) {
+        gap: 30px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        @media (width <= 425px) {
+            gap: 25px;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 35px;
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 26.1px;
+
+            @media (width <= 670px) {
+                &:first-of-type {
+                    display: none;
+                }
+            }
+        }
+    }
+}
