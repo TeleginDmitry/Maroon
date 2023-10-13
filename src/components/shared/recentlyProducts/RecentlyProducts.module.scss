@@ -1,0 +1,37 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    align-items: center;
+    padding: 0 100px;
+
+    @media (width <= 768px) {
+        padding: 0 45px;
+        gap: 50px;
+    }
+
+    @media (width <= 425px) {
+        padding: 0 15px;
+    }
+
+    .title {
+        font-size: 32px;
+        font-weight: 500;
+    }
+
+    .slider {
+        width: 100%;
+
+        .slide {
+            min-width: 270px;
+
+            @media (width <= 768px) {
+                min-width: calc(50% - 15px);
+            }
+
+            @media (width <= 425px) {
+                min-width: calc(100vw - 15px);
+            }
+        }
+    }
+}

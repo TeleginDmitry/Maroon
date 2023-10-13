@@ -4,13 +4,16 @@ import { classNames } from 'utils/classNames/classNames'
 
 interface Props {
     children?: React.ReactNode
+    onToggle?: (isChecked: boolean) => void
 }
 
-export function Checkbox({ children }: Props) {
+export function Checkbox({ children, onToggle }: Props) {
     const [isChecked, setChecked] = useState(false)
 
     function toggleChecked() {
         setChecked((state) => !state)
+
+        onToggle?.(isChecked)
     }
 
     return (

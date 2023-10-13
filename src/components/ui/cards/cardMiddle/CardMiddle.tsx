@@ -33,6 +33,7 @@ export function CardMiddle({ product }: Props) {
                 </div>
             </div>
             <Link
+                draggable={false}
                 className={styles.link}
                 to={CATALOG_PRODUCT_SCREEN + id}
             ></Link>

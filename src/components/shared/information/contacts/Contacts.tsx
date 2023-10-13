@@ -1,4 +1,4 @@
-import { Networks } from 'components/ui/networks/Networks'
+import { Networks } from 'components/shared/networks/Networks'
 import styles from './Contacts.module.scss'
 import { contacts } from './contacts.data'
 
