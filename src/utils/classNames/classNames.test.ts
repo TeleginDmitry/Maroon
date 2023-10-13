@@ -24,13 +24,11 @@ describe('Тесты функции classNames', () => {
         expect(result).toBe('generic primary rounded active disabled');
     })
 
-
     test('C комплексными модификаторы (логические и страковые значения)', () => {
         const modifiers = { 'active': true, 'size': 'medium', 'theme-dark': true };
         const result = classNames('generic', modifiers);
         expect(result).toBe('generic active size theme-dark');
     })
-
 
     test('Пустой объект модификатора (модификаторы не применены)', () => {
         const modifiers = {};
