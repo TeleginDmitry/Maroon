@@ -1,0 +1,21 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .subtitle {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .volumes {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        span {
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+}

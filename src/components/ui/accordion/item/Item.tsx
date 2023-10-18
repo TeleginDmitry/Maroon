@@ -21,9 +21,9 @@ export function Item({ title, children }: Props) {
             <div onClick={toggleIsActive} className={styles.header}>
                 <h2 className={styles.title}>{title}</h2>
                 {isActive ? (
-                    <Plus className={styles.icon}></Plus>
-                ) : (
                     <Minus className={styles.icon}></Minus>
+                ) : (
+                    <Plus className={styles.icon}></Plus>
                 )}
             </div>
             <div

@@ -14,7 +14,9 @@ export function Catalog() {
             </section>
             <RecentlyProducts></RecentlyProducts>
             <Join></Join>
-            <Information></Information>
+            <div className={styles.bottom}>
+                <Information></Information>
+            </div>
         </>
     )
 }

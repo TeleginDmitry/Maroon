@@ -5,6 +5,7 @@ import { NavigationType } from 'shared/types/slider.type'
 import { useContext } from 'react'
 import { SliderContext } from 'contexts/Slider.context'
 import { classNames } from 'utils/classNames/classNames'
+import { justifyContent } from 'shared/selectors/position/position'
 
 interface Props {
     navigation: boolean | NavigationType
@@ -18,12 +19,13 @@ export function Navigation({ navigation }: Props) {
 
     return (
         <div
-            style={{
-                justifyContent: position
-            }}
-            className={classNames(styles.navigation, {
-                [className!]: !!className
-            })}
+            className={classNames(
+                styles.navigation,
+                {
+                    [className]: !!className
+                },
+                [justifyContent[position]]
+            )}
         >
             <button onClick={swipeLeft} className={styles.button}>
                 <LeftArrow></LeftArrow>

@@ -5,7 +5,8 @@ import {
     Basket,
     Catalog,
     Contacts,
-    Profile
+    Profile,
+    Product
 } from 'components/screens'
 import {
     MAIN_SCREEN,
@@ -13,7 +14,8 @@ import {
     BASKET_SCREEN,
     CATALOG_SCREEN,
     CONTACTS_SCREEN,
-    PROFILE_SCREEN
+    PROFILE_SCREEN,
+    CATALOG_PRODUCT_SCREEN
 } from 'configs/screens.config'
 import { createBrowserRouter } from 'react-router-dom'
 
@@ -45,6 +47,10 @@ export const router = createBrowserRouter([
             {
                 element: <Catalog />,
                 path: CATALOG_SCREEN
+            },
+            {
+                element: <Product />,
+                path: CATALOG_PRODUCT_SCREEN + ':id'
             }
         ]
     }

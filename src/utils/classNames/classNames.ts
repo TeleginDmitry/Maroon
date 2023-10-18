@@ -3,8 +3,6 @@ type ModsType = Record<string, boolean | string>
 function classNames(cls: string, mods?: ModsType, additional?: string[]) {
     const result = [cls]
 
-    if (Array.isArray(additional)) result.push(...additional)
-
     if (!mods) return result.join(' ')
 
     const modsKeys = Object.keys(mods)
@@ -16,6 +14,8 @@ function classNames(cls: string, mods?: ModsType, additional?: string[]) {
             result.push(modCls)
         }
     })
+
+    if (Array.isArray(additional)) result.push(...additional)
 
     return result.join(' ')
 }

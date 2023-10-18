@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import { SliderContext } from 'contexts/Slider.context'
 import { PaginationType } from 'shared/types/slider.type'
 import { classNames } from 'utils/classNames/classNames'
+import { justifyContent } from 'shared/selectors/position/position'
 
 interface Props {
     pagination: boolean | PaginationType
@@ -17,12 +18,13 @@ export function Pagination({ pagination }: Props) {
 
     return (
         <div
-            style={{
-                justifyContent: position
-            }}
-            className={classNames(styles.pagination, {
-                className: !!className
-            })}
+            className={classNames(
+                styles.pagination,
+                {
+                    [className]: !!className
+                },
+                [justifyContent[position]]
+            )}
         >
             <p className={styles.page}>{indexActive! + 1}</p>
             <Line></Line>
