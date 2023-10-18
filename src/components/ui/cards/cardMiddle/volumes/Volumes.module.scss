@@ -1,0 +1,12 @@
+.volumes {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .volume {
+        color: #9a9da0;
+        font-size: 13px;
+        font-family: 'Mplus 1p-maroon', sans-serif;
+        font-weight: 400;
+    }
+}

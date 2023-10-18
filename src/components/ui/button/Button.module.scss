@@ -6,4 +6,8 @@
     border-radius: 2px;
     border: 1px solid #b3bac1;
     user-select: none;
+
+    @media (width <= 425px) {
+        font-size: 14px;
+    }
 }

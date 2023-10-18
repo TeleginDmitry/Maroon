@@ -3,13 +3,14 @@ import styles from './CardMiddle.module.scss'
 import { Link } from 'react-router-dom'
 import { CATALOG_PRODUCT_SCREEN } from 'configs/screens.config'
 import { ReactComponent as Ruble } from 'assets/icons/ruble.svg'
+import { Volumes } from './volumes/Volumes'
 
 interface Props {
     product: ProductType
 }
 
 export function CardMiddle({ product }: Props) {
-    const { id, image, price, title, name, volume } = product
+    const { id, image, price, title, name, volumes } = product
 
     return (
         <div className={styles.product}>
@@ -29,7 +30,7 @@ export function CardMiddle({ product }: Props) {
                 </div>
                 <div className={styles.block}>
                     <span>{title}</span>
-                    <span>{volume}</span>
+                    <Volumes volumes={volumes}></Volumes>
                 </div>
             </div>
             <Link

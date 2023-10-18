@@ -1,13 +1,8 @@
 .wrapper {
     padding: 0 100px;
-    margin-bottom: 140px;
 
     @media (width <= 880px) {
         padding: 0 0 0 45px;
-    }
-
-    @media (width <= 768px) {
-        margin-bottom: 120px;
     }
 
     @media (width <= 670px) {
@@ -16,7 +11,6 @@
 
     @media (width <= 425px) {
         padding: 0 15px;
-        margin-bottom: 80px;
     }
 
     .container {

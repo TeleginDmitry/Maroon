@@ -1,15 +1,15 @@
 import { Slider } from 'components/ui/slider/Slider'
-import styles from './RecentlyProducts.module.scss'
+import styles from './MayLike.module.scss'
 import { useQuery } from '@tanstack/react-query'
 import { CardMiddle } from 'components/ui/cards/cardMiddle/CardMiddle'
+import { productsService } from 'services/products.service'
 import { SliderItem } from 'components/ui/slider/sliderItem/SliderItem'
 import { RECENTLY_PRODUCTS_KEY } from 'configs/queryKeys.config'
-import { productsService } from 'services/products.service'
 
-export function RecentlyProducts() {
+export function MayLike() {
     const { data } = useQuery({
         queryFn: async () => {
-            const response = await productsService.getRecentlyProducts()
+            const response = await productsService.getProducts()
             return response.data
         },
         queryKey: RECENTLY_PRODUCTS_KEY
@@ -19,7 +19,7 @@ export function RecentlyProducts() {
 
     return (
         <section className={styles.wrapper}>
-            <h1 className={styles.title}>Недавно вы смотрели</h1>
+            <h1 className={styles.title}>Вам также может понравиться</h1>
             <div className={styles.slider}>
                 <Slider
                     pagination={{ className: styles.pagination }}

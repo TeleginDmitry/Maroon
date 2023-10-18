@@ -22,13 +22,18 @@ export function Filter({ title }: Props) {
 
                 {isActiveMenu ? (
                     <button
-                        className={styles.button}
+                        className={styles.cancel}
                         onClick={toggleActiveMenu}
                     >
                         <Cancel></Cancel>
                     </button>
                 ) : (
-                    <Button onClick={toggleActiveMenu}>Фильтр</Button>
+                    <Button
+                        className={styles.filter}
+                        onClick={toggleActiveMenu}
+                    >
+                        Фильтр
+                    </Button>
                 )}
             </div>
             {isActiveMenu && <Menu></Menu>}

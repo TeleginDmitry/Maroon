@@ -12,6 +12,7 @@
 
     @media (width <= 425px) {
         padding: 40px 15px;
+        gap: 40px;
     }
 
     .container {
@@ -23,11 +24,26 @@
         .title {
             font-size: 36px;
             font-weight: 500;
+
+            @media (width <= 425px) {
+                font-size: 28px;
+            }
         }
 
-        .button {
+        .cancel {
             display: flex;
             align-items: center;
+
+            @media (width <= 425px) {
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+        .filter {
+            @media (width <= 425px) {
+                font-size: 14px;
+            }
         }
     }
 }

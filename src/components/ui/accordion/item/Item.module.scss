@@ -16,6 +16,10 @@
             font-size: 18px;
             font-weight: 500;
             color: #122947;
+
+            @media (width <= 425px) {
+                font-size: 16px;
+            }
         }
 
         .icon {
@@ -37,6 +41,10 @@
             line-height: 20px;
             font-size: 15px;
             padding-right: 10px;
+
+            @media (width <= 425px) {
+                font-size: 14px;
+            }
         }
     }
 }

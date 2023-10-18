@@ -3,6 +3,12 @@ export interface AccordionType {
     body: string
 }
 
+export interface VolumeType {
+    id: number
+    amount: number
+    unit: string
+}
+
 export interface ProductType {
     id: number
     image: string
@@ -10,6 +16,6 @@ export interface ProductType {
     title: string
     description: string
     accordion: AccordionType[]
-    volume: string
+    volumes: VolumeType[]
     price: number
 }

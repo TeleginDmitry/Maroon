@@ -1,0 +1,67 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    align-items: flex-start;
+    max-width: 370px;
+
+    @media (width <= 768px) {
+        max-width: 100%;
+    }
+
+    @media (width <= 425px) {
+        gap: 30px;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .title {
+            font-size: 32px;
+            font-weight: 500;
+
+            @media (width <= 425px) {
+                font-size: 28px;
+            }
+        }
+
+        .name {
+            color: #9a9da0;
+            font-size: 16px;
+        }
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        @media (width <= 425px) {
+            gap: 29px;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .price {
+            font-size: 26px;
+            font-weight: 500;
+            white-space: nowrap;
+
+            @media (width <= 425px) {
+                font-size: 22px;
+
+                svg {
+                    width: 12px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+
+    .description {
+        line-height: 23.2px;
+        font-size: 16px;
+    }
+}
