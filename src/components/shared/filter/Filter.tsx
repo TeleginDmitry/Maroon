@@ -29,7 +29,7 @@ export function Filter({ title }: Props) {
                     </button>
                 ) : (
                     <Button
-                        className={styles.button}
+                        className={styles.filter}
                         onClick={toggleActiveMenu}
                     >
                         Фильтр
