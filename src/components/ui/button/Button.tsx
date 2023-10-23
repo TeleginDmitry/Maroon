@@ -5,12 +5,13 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: string
 }
 
-export function Button({ children, className, ...rest }: Props) {
+export function Button({ children, className, disabled, ...rest }: Props) {
     return (
         <button
             {...rest}
             className={classNames(styles.button, {
-                [className!]: !!className
+                [className!]: !!className,
+                [styles.disabled]: disabled
             })}
         >
             {children}

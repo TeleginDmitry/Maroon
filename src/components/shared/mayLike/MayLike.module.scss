@@ -40,7 +40,7 @@
             min-width: 270px;
 
             @media (width <= 768px) {
-                min-width: calc(50% - 30px);
+                min-width: calc(50vw - 60px);
             }
 
             @media (width <= 425px) {

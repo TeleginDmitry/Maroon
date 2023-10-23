@@ -14,7 +14,7 @@ export function useSlider({
     gap = 10
 }: Partial<SliderLogicType>): SliderHookReturnType {
     const slidesRef = useRef<HTMLDivElement>(null)
-    const timerRef = useRef<number | null>(null)
+    const timerRef = useRef<NodeJS.Timeout | null>(null)
     const [translate, setTranslate] = useState(0)
     const [indexActive, setIndexActive] = useState(initialIndex)
     const [direction, setDirection] = useState<DirectionType | null>(null)
