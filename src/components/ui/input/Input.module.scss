@@ -1,0 +1,21 @@
+.label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .input {
+        padding: 8px;
+        border-radius: 2px;
+        border-bottom: 1px solid #b3bac1;
+        transition: all 0.3s;
+
+        &:focus {
+            border-bottom: 1px solid #0080ff;
+        }
+    }
+
+    .wrong {
+        border-bottom: 1px solid #f14337;
+    }
+}

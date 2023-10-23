@@ -1,0 +1,10 @@
+.label {
+    position: relative;
+    cursor: pointer;
+
+    .input {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
