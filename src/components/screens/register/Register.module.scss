@@ -3,11 +3,11 @@
     justify-content: center;
     padding: 100px 15px;
 
-    @media (max-width: 768px) {
+    @media (width <= 768px) {
         padding: 50px 15px;
     }
 
-    @media (max-width: 420px) {
+    @media (width <= 420px) {
         padding: 20px 15px;
     }
 
