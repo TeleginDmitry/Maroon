@@ -1,0 +1,13 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 100px 15px;
+
+    @media (width <= 768px) {
+        padding: 50px 15px;
+    }
+
+    @media (width <= 420px) {
+        padding: 20px 15px;
+    }
+}

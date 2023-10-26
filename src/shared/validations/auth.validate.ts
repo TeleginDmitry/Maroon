@@ -1,6 +1,6 @@
 import { object, string, mixed } from 'yup'
 
-export const validationSchemaRegister = object({
+export const RegisterValidationSchema = object({
     email: string()
         .email('Неправильный формат email')
         .required('Email обязателен для заполнения'),

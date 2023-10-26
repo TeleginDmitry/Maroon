@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import {
     DirectionType,
     SliderHookReturnType,
@@ -83,20 +83,25 @@ export function useSlider({
     }
 
     // Придаёт ref - slidesRef определённую продолжительность анимации
-    function makeDuration(fnc: () => void) {
-        if (!slidesRef.current) return
-        fnc()
+    const makeDuration = useCallback(
+        (callback: () => void) => {
+            if (!slidesRef.current) return
+            callback()
 
-        if (timerRef.current) {
-            clearTimeout(timerRef.current)
-        }
+            if (timerRef.current) {
+                clearTimeout(timerRef.current)
+            }
 
-        slidesRef.current.style.transitionDuration = `${duration}ms`
+            slidesRef.current.style.transitionDuration = `${duration}ms`
 
-        timerRef.current = setTimeout(() => {
-            slidesRef.current!.style.transitionDuration = '0ms'
-        }, duration)
-    }
+            timerRef.current = setTimeout(() => {
+                if (!slidesRef.current) return
+
+                slidesRef.current.style.transitionDuration = '0ms'
+            }, duration)
+        },
+        [duration]
+    )
 
     // Изменение состояния translate
     useEffect(() => {
@@ -114,7 +119,7 @@ export function useSlider({
 
         setTotalCount(children.length)
         setNeedUpdate(false)
-    }, [gap, indexActive, needUpdate])
+    }, [gap, indexActive, makeDuration, needUpdate])
 
     return {
         slidesRef,

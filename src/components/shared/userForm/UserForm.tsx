@@ -1,18 +1,30 @@
-import { useFormik } from 'formik'
-import styles from './RegisterForm.module.scss'
-import {
-    InitialValuesRegisterType,
-    initialValuesRegister
-} from './initialValues'
+import { useTypedSelector } from 'hooks/useTypedSelector'
+import styles from './UserForm.module.scss'
+import { userSelector } from 'store/auth/auth.selectors'
 import { Input } from 'components/ui/input/Input'
-import { Button } from 'components/ui/button/Button'
-import { useActions } from 'hooks/useActions'
+import { useFormik } from 'formik'
 import { UploadFile } from 'components/ui/uploadFile/UploadFile'
+import { UserValidationSchema } from 'shared/validations/user.validate'
+import { InitialValuesUserType, initialValuesUser } from './initialValues'
 import { InputStatus } from 'components/ui/inputStatus/InputStatus'
-import { RegisterValidationSchema } from 'shared/validations/auth.validate'
+import { Button } from 'components/ui/button/Button'
+import { useMutation } from '@tanstack/react-query'
+import { userService } from 'services/user.service'
+import { useActions } from 'hooks/useActions'
 
-export function RegisterForm() {
-    const { register } = useActions()
+export function UserForm() {
+    const { patchUser } = useActions()
+    const user = useTypedSelector(userSelector)
+
+    const { mutate } = useMutation({
+        mutationFn: async (values: InitialValuesUserType) => {
+            const response = await userService.patch(values)
+            return response.data
+        },
+        onSuccess(user) {
+            patchUser(user)
+        }
+    })
 
     const {
         handleSubmit,
@@ -22,20 +34,36 @@ export function RegisterForm() {
         isSubmitting,
         values,
         setFieldValue
-    } = useFormik<InitialValuesRegisterType>({
-        initialValues: initialValuesRegister,
-        validationSchema: RegisterValidationSchema,
-        onSubmit: async (values: InitialValuesRegisterType) => {
-            const image = values.image!
-            register({ ...values, image })
+    } = useFormik<InitialValuesUserType>({
+        initialValues: initialValuesUser,
+        validationSchema: UserValidationSchema,
+        onSubmit: async (values: InitialValuesUserType) => {
+            mutate(values)
         }
     })
 
     return (
         <form onSubmit={handleSubmit} className={styles.form}>
+            <UploadFile
+                onChange={(event) => {
+                    const file = event.target.files?.[0]
+
+                    if (file) {
+                        setFieldValue('image', file)
+                    }
+                }}
+                accept='image/*'
+                id='image'
+            >
+                <img
+                    className={styles.image}
+                    src={user?.image}
+                    alt='Изображение пользователя'
+                />
+            </UploadFile>
             <Input
                 isWrong={!!errors.email && !!touched.email}
-                placeholder='Введите свой email...'
+                placeholder={user?.email}
                 value={values.email}
                 onChange={handleChange}
                 type='email'
@@ -49,10 +77,9 @@ export function RegisterForm() {
                     ></InputStatus>
                 </div>
             </Input>
-
             <Input
                 isWrong={!!errors.name && !!touched.name}
-                placeholder='Введите своё имя...'
+                placeholder={user?.name}
                 value={values.name}
                 onChange={handleChange}
                 type='name'
@@ -66,10 +93,9 @@ export function RegisterForm() {
                     ></InputStatus>
                 </div>
             </Input>
-
             <Input
                 isWrong={!!errors.password && !!touched.password}
-                placeholder='Введите свой пароль...'
+                placeholder='Пароль'
                 value={values.password}
                 onChange={handleChange}
                 type='password'
@@ -84,27 +110,8 @@ export function RegisterForm() {
                 </div>
             </Input>
 
-            <UploadFile
-                onChange={(event) => {
-                    const file = event.target.files?.[0]
-
-                    if (file) {
-                        setFieldValue('image', file)
-                    }
-                }}
-                accept='image/*'
-                id='image'
-            >
-                <div className={styles.container}>
-                    Выбрать файл
-                    <InputStatus
-                        isError={!!errors.image}
-                        isShow={!!values.image}
-                    ></InputStatus>
-                </div>
-            </UploadFile>
             <Button disabled={isSubmitting} type='submit'>
-                Создать
+                Сохранить
             </Button>
         </form>
     )
