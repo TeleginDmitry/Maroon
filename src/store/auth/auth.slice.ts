@@ -1,4 +1,4 @@
-import { createSlice, AnyAction } from '@reduxjs/toolkit'
+import { createSlice, AnyAction, PayloadAction } from '@reduxjs/toolkit'
 import { register, logout, verify, login } from './auth.actions'
 import { UserType } from 'shared/types/user.type'
 
@@ -66,7 +66,11 @@ const AuthSlice = createSlice({
             state.isLoading = true
         })
     },
-    reducers: {},
+    reducers: {
+        patchUser(state, action: PayloadAction<UserType>) {
+            state.user = action.payload
+        }
+    },
     initialState,
 
     name: 'auth'
@@ -76,5 +80,6 @@ function isLoadingAction(action: AnyAction) {
     return action.type.endsWith('pending')
 }
 
+export const { patchUser } = AuthSlice.actions
 // eslint-disable-next-line import/no-default-export
 export default AuthSlice.reducer

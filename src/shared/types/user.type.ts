@@ -4,3 +4,10 @@ export interface UserType {
     email: string
     image: string
 }
+
+export interface PatchRequestType {
+    email?: string
+    password?: string
+    name?: string
+    image?: File | null
+}

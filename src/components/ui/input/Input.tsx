@@ -2,7 +2,7 @@ import { classNames } from 'utils/classNames/classNames'
 import styles from './Input.module.scss'
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
-    children: React.ReactNode
+    children?: React.ReactNode
     isWrong?: boolean
 }
 

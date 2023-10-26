@@ -5,6 +5,7 @@ import { validationSchemaLogin } from './validationSchema'
 import { Input } from 'components/ui/input/Input'
 import { Button } from 'components/ui/button/Button'
 import { useActions } from 'hooks/useActions'
+import { InputStatus } from 'components/ui/inputStatus/InputStatus'
 
 export function LoginForm() {
     const { login } = useActions()
@@ -34,7 +35,13 @@ export function LoginForm() {
                 type='email'
                 id='email'
             >
-                Email
+                <div className={styles.container}>
+                    Email
+                    <InputStatus
+                        isError={!!errors.email}
+                        isShow={!!values.email.length}
+                    ></InputStatus>
+                </div>
             </Input>
             <Input
                 isWrong={!!errors.password && !!touched.password}
@@ -44,7 +51,13 @@ export function LoginForm() {
                 type='password'
                 id='password'
             >
-                Пароль
+                <div className={styles.container}>
+                    Пароль
+                    <InputStatus
+                        isError={!!errors.password}
+                        isShow={!!values.password.length}
+                    ></InputStatus>
+                </div>
             </Input>
             <Button disabled={isSubmitting} type='submit'>
                 Войти

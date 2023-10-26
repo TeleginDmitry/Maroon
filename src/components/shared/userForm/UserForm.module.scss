@@ -1,8 +1,16 @@
 .form {
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    width: 100%;
+    border: 1px solid #dbdce0;
+    border-radius: 10px;
+    padding: 10px;
+
+    .image {
+        border-radius: 10px;
+        object-fit: cover;
+    }
 
     .container {
         display: flex;
