@@ -12,7 +12,7 @@
           "contexts": "/contexts",
           "hooks": "/hooks",
           "providers": "/providers",
-          "routes": "/routes",
+          "router": "/router",
           "services": "/services",
           "shared": "/shared",
           "utils": "/utils",

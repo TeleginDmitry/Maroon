@@ -14,7 +14,8 @@ export function Map() {
         <YMaps
             query={{
                 ns: 'use-load-option',
-                load: 'Map,Placemark,control.ZoomControl,control.FullscreenControl,geoObject.addon.balloon'
+                load: 'Map,Placemark,control.ZoomControl,control.FullscreenControl,geoObject.addon.balloon',
+                apikey: '52614f34-3ca5-4920-9910-55dd61faf637'
             }}
         >
             <MapInstance

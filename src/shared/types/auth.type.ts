@@ -9,7 +9,7 @@ export interface RegisterRequestType {
 
 export interface RegisterResponseType {
     user: UserType
-    token: string
+    access_token: string
 }
 
 export interface LoginRequestType {
@@ -19,11 +19,11 @@ export interface LoginRequestType {
 
 export interface LoginResponseType {
     user: UserType
-    token: string
+    access_token: string
 }
 
-export interface VerifyResponseType {
-    user: UserType
-    iat: number
-    exp: number
+export interface VerifyResponseType extends UserType {}
+
+export interface RefreshResponseType {
+    access_token: string
 }

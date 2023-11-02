@@ -19,3 +19,7 @@ export interface ProductType {
     volumes: VolumeType[]
     price: number
 }
+
+export interface RecentlyProductType {
+    product: ProductType
+}

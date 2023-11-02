@@ -5,38 +5,34 @@ import { Checkbox } from 'components/ui/checkbox/Checkbox'
 
 interface Props {
     filters: FilterType[]
-    addFilter: (category: string, value: string) => void
-    removeFilter: (category: string, value: string) => void
+    addFilter: (category: string) => void
+    removeFilter: (category: string) => void
 }
 
 export function AccordionList({ filters, addFilter, removeFilter }: Props) {
-    function toggleValue(isChecked: boolean, category: string, item: string) {
+    function toggleValue(isChecked: boolean, category: string) {
         if (isChecked) {
-            removeFilter(category, item)
+            removeFilter(category)
         } else {
-            addFilter(category, item)
+            addFilter(category)
         }
     }
     return (
         <div className={styles.wrapper}>
             <Accordion className={styles.accordion}>
-                {filters.map(({ items, id, title, category }) => {
+                {filters.map(({ categories, id, name }) => {
                     return (
-                        <Accordion.Item key={id} title={title}>
-                            <ul className={styles.items}>
-                                {items.map((item, index) => {
+                        <Accordion.Item key={id} title={name}>
+                            <ul className={styles.categories}>
+                                {categories.map(({ id, name }) => {
                                     return (
-                                        <li key={index}>
+                                        <li key={id}>
                                             <Checkbox
                                                 onToggle={(isChecked) =>
-                                                    toggleValue(
-                                                        isChecked,
-                                                        category,
-                                                        item
-                                                    )
+                                                    toggleValue(isChecked, name)
                                                 }
                                             >
-                                                {item}
+                                                {name}
                                             </Checkbox>
                                         </li>
                                     )
