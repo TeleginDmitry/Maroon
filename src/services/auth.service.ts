@@ -3,6 +3,7 @@ import { AxiosResponse } from 'axios'
 import {
     LoginRequestType,
     LoginResponseType,
+    RefreshResponseType,
     RegisterRequestType,
     RegisterResponseType,
     VerifyResponseType
@@ -31,6 +32,10 @@ export const authService = {
             password,
             email
         })
+    },
+
+    refresh: async (): Promise<AxiosResponse<RefreshResponseType>> => {
+        return instance.get(`auth/refresh`)
     },
 
     verify: async (): Promise<AxiosResponse<VerifyResponseType>> => {

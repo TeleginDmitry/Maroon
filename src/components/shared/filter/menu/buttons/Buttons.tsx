@@ -2,40 +2,52 @@ import { Button } from 'components/ui/button/Button'
 import styles from './Buttons.module.scss'
 import { FilterParamsType } from 'shared/types/filter.type'
 import { useSearchParams } from 'react-router-dom'
+import { FILTER_PARAM } from 'configs/filter.config'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { productsService } from 'services/products.service'
+import { PRODUCTS_KEY } from 'configs/queryKeys.config'
 
 interface Props {
     filterParams: FilterParamsType
 }
 
 export function Buttons({ filterParams }: Props) {
+    const queryClient = useQueryClient()
+
     const [URLSearchParams, SetURLSearchParams] = useSearchParams()
 
-    function completeFilters() {
-        Object.keys(filterParams).forEach((category) => {
-            const values = filterParams[category]
+    const { mutate } = useMutation({
+        mutationFn: async (categories: string) => {
+            const response = await productsService.getProducts(categories)
+            return response.data
+        },
+        onSuccess: (data) => {
+            queryClient.setQueryData(PRODUCTS_KEY, data)
+        }
+    })
 
-            if (!values.length) {
-                URLSearchParams.delete(category)
-            }
+    function onCompleteFilters() {
+        const toStringCategories = filterParams.categories.toString()
 
-            URLSearchParams.set(category, values.toString())
-
-            SetURLSearchParams(URLSearchParams)
-        })
-    }
-
-    function clearFilters() {
-        Object.keys(filterParams).forEach((category) => {
-            URLSearchParams.delete(category)
-        })
+        URLSearchParams.set(FILTER_PARAM, toStringCategories)
 
         SetURLSearchParams(URLSearchParams)
+
+        mutate(toStringCategories)
+    }
+
+    function onClearFilters() {
+        URLSearchParams.delete(FILTER_PARAM)
+
+        SetURLSearchParams(URLSearchParams)
+
+        mutate('')
     }
 
     return (
         <div className={styles.wrapper}>
-            <Button onClick={completeFilters}>Применить</Button>
-            <Button onClick={clearFilters}>Сбросить</Button>
+            <Button onClick={onCompleteFilters}>Применить</Button>
+            <Button onClick={onClearFilters}>Сбросить</Button>
         </div>
     )
 }

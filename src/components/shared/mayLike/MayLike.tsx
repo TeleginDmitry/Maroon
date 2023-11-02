@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query'
 import { CardMiddle } from 'components/ui/cards/cardMiddle/CardMiddle'
 import { productsService } from 'services/products.service'
 import { SliderItem } from 'components/ui/slider/sliderItem/SliderItem'
-import { RECENTLY_PRODUCTS_KEY } from 'configs/queryKeys.config'
+import { PRODUCTS_KEY } from 'configs/queryKeys.config'
 
 export function MayLike() {
     const { data } = useQuery({
@@ -12,7 +12,7 @@ export function MayLike() {
             const response = await productsService.getProducts()
             return response.data
         },
-        queryKey: RECENTLY_PRODUCTS_KEY
+        queryKey: PRODUCTS_KEY
     })
 
     if (!data) return null

@@ -4,12 +4,16 @@ import { filtersService } from 'services/filters.service'
 import { FILTER_KEY } from 'configs/queryKeys.config'
 import { Buttons } from './buttons/Buttons'
 import { List } from './list/List'
-import { AccordionList } from './accordionList/AccordionList'
 import { useState } from 'react'
 import { FilterParamsType } from 'shared/types/filter.type'
+import { AccordionList } from './accordionList/AccordionList'
+import { useCategories } from 'hooks/useCategories'
 
 export function Menu() {
-    const [filterParams, setFilterParams] = useState<FilterParamsType>({})
+    const categories = useCategories()
+    const [filterParams, setFilterParams] = useState<FilterParamsType>({
+        categories
+    })
 
     const { data } = useQuery({
         queryFn: async () => {
@@ -19,27 +23,19 @@ export function Menu() {
         queryKey: FILTER_KEY
     })
 
-    function addFilter(category: string, value: string) {
+    function addFilter(category: string) {
         setFilterParams((state) => {
-            if (state[category]) {
-                state[category].push(value)
-            } else {
-                state[category] = [value]
-            }
+            state.categories.push(category)
 
             return state
         })
     }
 
-    function removeFilter(category: string, value: string) {
+    function removeFilter(category: string) {
         setFilterParams((state) => {
-            if (state[category]) {
-                state[category] = state[category].filter(
-                    (target) => target !== value
-                )
-            } else {
-                delete state[category]
-            }
+            state.categories = state.categories.filter(
+                (item) => item !== category
+            )
 
             return state
         })

@@ -1,8 +1,14 @@
-export interface FilterType {
+export interface CategoryType {
     id: number
-    category: string
-    title: string
-    items: string[]
+    name: string
 }
 
-export type FilterParamsType = Record<string, string[]>
+export interface FilterType {
+    id: number
+    name: string
+    categories: CategoryType[]
+}
+
+export interface FilterParamsType {
+    categories: string[]
+}

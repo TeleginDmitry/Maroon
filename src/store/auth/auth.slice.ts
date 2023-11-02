@@ -32,7 +32,7 @@ const AuthSlice = createSlice({
         })
         builder.addCase(verify.fulfilled, (state, { payload }) => {
             state.isLoading = false
-            state.user = payload.user
+            state.user = payload
             state.isAuth = true
             state.isError = false
         })

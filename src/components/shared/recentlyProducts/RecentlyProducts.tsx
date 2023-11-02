@@ -15,7 +15,7 @@ export function RecentlyProducts() {
         queryKey: RECENTLY_PRODUCTS_KEY
     })
 
-    if (!data) return null
+    if (!data?.length) return null
 
     return (
         <section className={styles.wrapper}>
@@ -26,7 +26,7 @@ export function RecentlyProducts() {
                     navigation={{ position: 'right' }}
                     gap={30}
                 >
-                    {data.map((product) => {
+                    {data.map(({ product }) => {
                         return (
                             <SliderItem
                                 className={styles.slide}

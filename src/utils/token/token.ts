@@ -1,14 +1,13 @@
-import { COOKIE_TOKEN_KEY } from 'configs/cookie.config'
-import Cookie from 'js-cookie'
+import { LOCAL_STORAGE_TOKEN_KEY } from 'configs/localStorage.config'
 
 export const getToken = () => {
-    return Cookie.get(COOKIE_TOKEN_KEY)
+    return localStorage.getItem(LOCAL_STORAGE_TOKEN_KEY)
 }
 
 export const saveToken = (token: string) => {
-    Cookie.set(COOKIE_TOKEN_KEY, token)
+    localStorage.setItem(LOCAL_STORAGE_TOKEN_KEY, token)
 }
 
 export const removeToken = () => {
-    Cookie.remove(COOKIE_TOKEN_KEY)
+    localStorage.removeItem(LOCAL_STORAGE_TOKEN_KEY)
 }

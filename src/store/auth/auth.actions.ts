@@ -19,7 +19,7 @@ export const login = createAsyncThunk<LoginResponseType, LoginRequestType>(
             })
 
             if (response.data) {
-                const token = response.data.token
+                const token = response.data.access_token
                 saveToken(token)
             }
 
@@ -38,7 +38,7 @@ export const register = createAsyncThunk<
         const response = await authService.register(data)
 
         if (response.data) {
-            const token = response.data.token
+            const token = response.data.access_token
             saveToken(token)
         }
 
