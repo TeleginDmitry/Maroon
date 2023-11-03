@@ -25,7 +25,7 @@ import {
 } from 'configs/screens.config'
 
 import { createBrowserRouter } from 'react-router-dom'
-import { CreateRecentlyProduct } from './CreateRecentlyProduct'
+import { CreateRecentlyProduct, Private } from './helpers'
 
 export const router = createBrowserRouter([
     {
@@ -40,14 +40,7 @@ export const router = createBrowserRouter([
                 element: <About />,
                 path: ABOUT_SCREEN
             },
-            {
-                element: <Basket />,
-                path: BASKET_SCREEN
-            },
-            {
-                element: <Profile />,
-                path: PROFILE_SCREEN
-            },
+
             {
                 element: <Contacts />,
                 path: CONTACTS_SCREEN
@@ -67,16 +60,30 @@ export const router = createBrowserRouter([
             {
                 element: <NotFound />,
                 path: NOT_FOUND_SCREEN
-            }
-        ]
-    },
-    {
-        element: <CreateRecentlyProduct></CreateRecentlyProduct>,
-        path: MAIN_SCREEN,
-        children: [
+            },
             {
-                element: <Product />,
-                path: CATALOG_PRODUCT_SCREEN + ':id'
+                element: <CreateRecentlyProduct />,
+                path: CATALOG_PRODUCT_SCREEN + ':id',
+                children: [
+                    {
+                        element: <Product />,
+                        index: true
+                    }
+                ]
+            },
+            {
+                element: <Private />,
+                path: MAIN_SCREEN,
+                children: [
+                    {
+                        element: <Basket />,
+                        path: BASKET_SCREEN
+                    },
+                    {
+                        element: <Profile />,
+                        path: PROFILE_SCREEN
+                    }
+                ]
             }
         ]
     }

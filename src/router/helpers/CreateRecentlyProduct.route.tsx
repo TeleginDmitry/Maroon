@@ -1,7 +1,6 @@
 import { useMutation } from '@tanstack/react-query'
-import { useParams } from 'react-router-dom'
+import { Outlet, useParams } from 'react-router-dom'
 import { productsService } from 'services/products.service'
-import { Layout } from 'components/layout/Layout'
 import { useEffect } from 'react'
 
 export function CreateRecentlyProduct() {
@@ -19,5 +18,5 @@ export function CreateRecentlyProduct() {
         mutate(+id)
     }, [])
 
-    return <Layout />
+    return <Outlet />
 }
