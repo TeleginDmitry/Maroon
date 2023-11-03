@@ -2,4 +2,8 @@
     display: flex;
     align-items: center;
     gap: 30px;
+
+    .icon {
+        cursor: pointer;
+    }
 }
