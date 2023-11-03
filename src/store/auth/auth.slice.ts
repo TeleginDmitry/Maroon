@@ -7,63 +7,63 @@ type IInitialState = {
     isLoading: boolean
     isError: boolean
     isAuth: boolean
+    isVerified: boolean
 }
 
 const initialState: IInitialState = {
     isLoading: false,
     isError: false,
     isAuth: false,
+    isVerified: false,
     user: null
 }
 
 const AuthSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(register.fulfilled, (state, { payload }) => {
-            state.isLoading = false
             state.user = payload.user
-            state.isError = false
             state.isAuth = true
         })
         builder.addCase(register.rejected, (state, { payload }) => {
-            state.isLoading = false
             state.user = null
-            state.isError = true
             state.isAuth = false
         })
         builder.addCase(verify.fulfilled, (state, { payload }) => {
-            state.isLoading = false
+            state.isVerified = true
             state.user = payload
             state.isAuth = true
-            state.isError = false
         })
         builder.addCase(verify.rejected, (state, { payload }) => {
-            state.isLoading = false
-            state.isError = true
+            state.isVerified = true
             state.user = null
             state.isAuth = false
         })
 
         builder.addCase(login.fulfilled, (state, { payload }) => {
-            state.isLoading = false
             state.user = payload.user
-            state.isError = false
             state.isAuth = true
         })
         builder.addCase(login.rejected, (state, { payload }) => {
-            state.isLoading = false
             state.user = null
-            state.isError = true
             state.isAuth = false
         })
         builder.addCase(logout.fulfilled, (state) => {
-            state.isLoading = false
             state.user = null
-            state.isError = false
             state.isAuth = false
         })
 
-        builder.addMatcher(isLoadingAction, (state) => {
+        builder.addMatcher(PendingAction, (state) => {
             state.isLoading = true
+        })
+
+        builder.addMatcher(FulfilledAction, (state) => {
+            state.isLoading = false
+            state.isError = false
+        })
+
+        builder.addMatcher(RejectedAction, (state) => {
+            state.isLoading = false
+            state.isError = true
         })
     },
     reducers: {
@@ -76,8 +76,16 @@ const AuthSlice = createSlice({
     name: 'auth'
 })
 
-function isLoadingAction(action: AnyAction) {
+function PendingAction(action: AnyAction) {
     return action.type.endsWith('pending')
+}
+
+function FulfilledAction(action: AnyAction) {
+    return action.type.endsWith('fulfilled')
+}
+
+function RejectedAction(action: AnyAction) {
+    return action.type.endsWith('rejected')
 }
 
 export const { patchUser } = AuthSlice.actions
