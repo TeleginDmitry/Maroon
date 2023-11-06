@@ -1,0 +1,20 @@
+.price {
+    font-weight: 500;
+    font-size: 20px;
+    gap: 4px;
+    white-space: nowrap;
+
+    .icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    @media (width <= 425px) {
+        font-size: 18px;
+
+        .icon {
+            width: 13px;
+            height: 13px;
+        }
+    }
+}

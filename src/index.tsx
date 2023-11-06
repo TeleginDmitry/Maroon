@@ -7,7 +7,9 @@ import { CombineProvider } from 'providers/Combine.provider'
 import { RouterProvider } from 'react-router-dom'
 import { router } from 'router/router'
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+    defaultOptions: { queries: { networkMode: 'always' } }
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(

@@ -10,11 +10,14 @@ import { Modules } from './modules/Modules'
 import { DraggableCore } from 'react-draggable'
 import { useSlider } from 'hooks/useSlider'
 import { useSliderItem } from 'hooks/useSliderItem'
+import { classNames } from 'utils/classNames/classNames'
 
 interface Props extends SliderLogicType {
     children: React.ReactNode
     navigation?: boolean | NavigationType
     pagination?: boolean | PaginationType
+    wrapperClass?: string
+    containerClass?: string
 }
 
 export function Slider(props: Props) {
@@ -25,7 +28,9 @@ export function Slider(props: Props) {
         initialIndex = 0,
         countSwipe = 1,
         navigation = true,
-        pagination = true
+        pagination = true,
+        wrapperClass,
+        containerClass
     } = props
 
     const {
@@ -62,7 +67,11 @@ export function Slider(props: Props) {
 
     return (
         <SliderProvider valueProvider={valueProvider}>
-            <div className={styles.slider}>
+            <div
+                className={classNames(styles.slider, {
+                    [wrapperClass!]: !!wrapperClass
+                })}
+            >
                 <DraggableCore
                     enableUserSelectHack={true}
                     onDrag={onDrag}
@@ -74,7 +83,9 @@ export function Slider(props: Props) {
                             gap,
                             transform: `translate3d(${translate}px, 0px, 0px)`
                         }}
-                        className={styles.slides}
+                        className={classNames(styles.slides, {
+                            [containerClass!]: !!containerClass
+                        })}
                     >
                         {children}
                     </div>

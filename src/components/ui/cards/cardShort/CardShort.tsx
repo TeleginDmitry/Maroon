@@ -1,17 +1,23 @@
-import { ProductType } from 'shared/types/product.type'
 import styles from './CardShort.module.scss'
 import { Link } from 'react-router-dom'
 import { CATALOG_PRODUCT_SCREEN } from 'configs/screens.config'
+import { classNames } from 'utils/classNames/classNames'
 
 interface Props {
-    product: ProductType
+    name: string
+    title: string
+    image: string
+    id: number
+    className?: string
 }
 
-export function CardShort({ product }: Props) {
-    const { id, image, title, name } = product
-
+export function CardShort({ id, image, title, name, className }: Props) {
     return (
-        <div className={styles.product}>
+        <div
+            className={classNames(styles.product, {
+                [className!]: !!className
+            })}
+        >
             <img
                 className={styles.image}
                 src={image}
@@ -21,8 +27,8 @@ export function CardShort({ product }: Props) {
 
             <div className={styles.container}>
                 <div className={styles.block}>
-                    <span>{name}</span>
                     <span>{title}</span>
+                    <span>{name}</span>
                 </div>
                 <Link to={CATALOG_PRODUCT_SCREEN + id}>
                     <button className={styles.button}>Подробнее</button>

@@ -21,5 +21,19 @@ export interface ProductType {
 }
 
 export interface RecentlyProductType {
+    id: number
     product: ProductType
+}
+
+export interface BasketProductType {
+    id: number
+    product: ProductType
+    count: number
+    isChecked: boolean
+    volumes: VolumeType[]
+}
+
+export interface PatchRequestDataType {
+    count?: number
+    isChecked?: boolean
 }

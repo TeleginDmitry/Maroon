@@ -28,6 +28,7 @@ export function AccordionList({ filters, addFilter, removeFilter }: Props) {
                                     return (
                                         <li key={id}>
                                             <Checkbox
+                                                view='circle'
                                                 onToggle={(isChecked) =>
                                                     toggleValue(isChecked, name)
                                                 }

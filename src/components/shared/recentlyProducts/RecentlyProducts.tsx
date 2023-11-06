@@ -32,7 +32,16 @@ export function RecentlyProducts() {
                                 className={styles.slide}
                                 key={product.id}
                             >
-                                <CardMiddle product={product}></CardMiddle>
+                                {({ isActive }) => {
+                                    return (
+                                        <CardMiddle
+                                            className={
+                                                isActive ? styles.product : ''
+                                            }
+                                            {...product}
+                                        ></CardMiddle>
+                                    )
+                                }}
                             </SliderItem>
                         )
                     })}

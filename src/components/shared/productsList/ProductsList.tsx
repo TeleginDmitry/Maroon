@@ -27,10 +27,7 @@ export function ProductsList() {
             <ul className={styles.products}>
                 {data.map((product) => {
                     return (
-                        <CardMiddle
-                            key={product.id}
-                            product={product}
-                        ></CardMiddle>
+                        <CardMiddle key={product.id} {...product}></CardMiddle>
                     )
                 })}
             </ul>

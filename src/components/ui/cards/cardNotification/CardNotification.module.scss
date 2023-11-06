@@ -1,0 +1,126 @@
+.product {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 13px;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    animation-name: opacity;
+    animation-duration: 500ms;
+    box-shadow: 0 0 13px 8px #0000000d;
+
+    @media (width <= 425px) {
+        right: 15px;
+        top: 15px;
+        padding: 10px;
+    }
+
+    @keyframes opacity {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    &.success {
+        background-color: rgb(3 252 65 / 80%);
+    }
+
+    &.error {
+        background-color: rgb(255 229 229 / 80%);
+    }
+
+    .container {
+        display: flex;
+        gap: 35px;
+
+        @media (width <= 425px) {
+            gap: 20px;
+        }
+
+        .content {
+            display: flex;
+            gap: 15px;
+
+            @media (width <= 425px) {
+                align-items: center;
+            }
+
+            .image {
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+                border-radius: 5px;
+
+                @media (width <= 425px) {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                @media (width <= 425px) {
+                    gap: 10px;
+                }
+
+                .title {
+                    font-size: 25px;
+                    font-weight: 500;
+
+                    @media (width <= 768px) {
+                        font-size: 23px;
+                    }
+                }
+
+                .name {
+                    font-size: 18px;
+
+                    @media (width <= 425px) {
+                        font-size: 16px;
+                    }
+                }
+
+                .volumes {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                }
+            }
+        }
+
+        .block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+    }
+
+    .progress {
+        animation-name: progress;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+        background-color: rgb(255 255 255);
+        margin-top: 7px;
+        height: 6px;
+        border-radius: 3px;
+
+        @keyframes progress {
+            0% {
+                width: 100%;
+            }
+
+            100% {
+                width: 0%;
+            }
+        }
+    }
+}
