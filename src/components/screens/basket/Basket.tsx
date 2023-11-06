@@ -1,3 +1,11 @@
+import { BasketInfo } from 'components/shared/basketInfo/BasketInfo'
+import { MayLike } from 'components/shared/mayLike/MayLike'
+
 export function Basket() {
-    return <div>Basket</div>
+    return (
+        <>
+            <BasketInfo></BasketInfo>
+            <MayLike></MayLike>
+        </>
+    )
 }

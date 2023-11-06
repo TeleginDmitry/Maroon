@@ -63,6 +63,7 @@ export function UserForm() {
             </UploadFile>
             <Input
                 isWrong={!!errors.email && !!touched.email}
+                inputMode='email'
                 placeholder={user?.email}
                 value={values.email}
                 onChange={handleChange}

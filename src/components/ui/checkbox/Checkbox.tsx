@@ -7,22 +7,24 @@ interface Props {
     onToggle?: (isChecked: boolean) => void
     className?: string
     initialState?: boolean
+    view?: 'circle' | 'square'
 }
 
 export function Checkbox({
     children,
     onToggle,
     className,
-    initialState
+    initialState,
+    view = 'square'
 }: Props) {
-    const [isChecked, setChecked] = useState(
-        initialState ? initialState : false
-    )
+    const [isChecked, setChecked] = useState(initialState ?? false)
 
     function toggleChecked() {
-        setChecked((state) => !state)
+        setChecked((state) => {
+            onToggle?.(!state)
 
-        onToggle?.(isChecked)
+            return !state
+        })
     }
 
     return (
@@ -32,7 +34,11 @@ export function Checkbox({
                 [className!]: !!className
             })}
         >
-            <div className={styles.checkbox}>
+            <div
+                className={classNames(styles.checkbox, {
+                    [styles.checkbox__circle]: view === 'circle'
+                })}
+            >
                 <div
                     className={classNames(styles.background, {
                         [styles.background__checked]: isChecked

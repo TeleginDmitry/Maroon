@@ -9,6 +9,18 @@
         flex-direction: column;
         gap: 140px;
 
+        &:last-of-type {
+            margin-bottom: 120px;
+
+            @media (width <= 768px) {
+                margin-bottom: 100px;
+            }
+
+            @media (width <= 425px) {
+                margin-bottom: 60px;
+            }
+        }
+
         @media (width <= 768px) {
             gap: 120px;
         }

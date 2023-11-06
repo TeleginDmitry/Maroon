@@ -49,6 +49,11 @@
             font-weight: 500;
             white-space: nowrap;
 
+            svg {
+                width: auto;
+                height: auto;
+            }
+
             @media (width <= 425px) {
                 font-size: 22px;
 

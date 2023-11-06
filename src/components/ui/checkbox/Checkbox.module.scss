@@ -7,12 +7,18 @@
     .checkbox {
         width: 14px;
         height: 14px;
-        border-radius: 50%;
         border: 1px solid #cdcdcd;
         padding: 2px;
 
-        .background {
+        &__circle {
             border-radius: 50%;
+
+            .background {
+                border-radius: 50%;
+            }
+        }
+
+        .background {
             height: 100%;
 
             &__checked {

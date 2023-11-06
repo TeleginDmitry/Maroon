@@ -46,6 +46,13 @@
             @media (width <= 425px) {
                 min-width: calc(100vw - 30px);
             }
+
+            .product {
+                img {
+                    opacity: 1 !important;
+                    transform: scale(1.1);
+                }
+            }
         }
     }
 }

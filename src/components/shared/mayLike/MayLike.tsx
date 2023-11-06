@@ -15,7 +15,7 @@ export function MayLike() {
         queryKey: PRODUCTS_KEY
     })
 
-    if (!data) return null
+    if (!data?.length) return null
 
     return (
         <section className={styles.wrapper}>
@@ -32,7 +32,16 @@ export function MayLike() {
                                 className={styles.slide}
                                 key={product.id}
                             >
-                                <CardMiddle product={product}></CardMiddle>
+                                {({ isActive }) => {
+                                    return (
+                                        <CardMiddle
+                                            className={
+                                                isActive ? styles.product : ''
+                                            }
+                                            {...product}
+                                        ></CardMiddle>
+                                    )
+                                }}
                             </SliderItem>
                         )
                     })}

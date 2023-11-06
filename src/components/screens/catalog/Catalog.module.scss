@@ -3,15 +3,3 @@
     flex-direction: column;
     gap: 60px;
 }
-
-.bottom {
-    margin-bottom: 140px;
-
-    @media (width <= 768px) {
-        margin-bottom: 120px;
-    }
-
-    @media (width <= 425px) {
-        margin-bottom: 80px;
-    }
-}

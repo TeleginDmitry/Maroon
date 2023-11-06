@@ -26,7 +26,14 @@ export function Products() {
             {data.map((product) => {
                 return (
                     <SliderItem className={styles.slide} key={product.id}>
-                        <CardShort product={product}></CardShort>
+                        {({ isActive }) => {
+                            return (
+                                <CardShort
+                                    className={isActive ? styles.product : ''}
+                                    {...product}
+                                ></CardShort>
+                            )
+                        }}
                     </SliderItem>
                 )
             })}

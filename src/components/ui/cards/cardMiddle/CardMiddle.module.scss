@@ -2,18 +2,27 @@
     position: relative;
     height: 350px;
     width: 100%;
-
-    .link {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-    }
+    border-radius: 10px;
+    overflow: hidden;
 
     .image {
         width: 100%;
         height: 350px;
         user-select: none;
         object-fit: cover;
+        opacity: 0.8;
+        transition: all 0.3s;
+    }
+
+    &:hover .image {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    .link {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
     }
 
     .container {
@@ -52,11 +61,6 @@
                         font-family: 'Mplus 1p-maroon', sans-serif;
                     }
                 }
-            }
-
-            .icon {
-                width: 10px;
-                height: 12px;
             }
         }
     }

@@ -5,7 +5,6 @@ import { Information } from 'components/shared/information/Information'
 import { Join } from 'components/shared/join/Join'
 import { Recommendations } from 'components/shared/recommendations/Recommendations'
 import { IndividualCare } from 'components/shared/individualCare/IndividualCare'
-import styles from './Main.module.scss'
 
 export function Main() {
     return (
@@ -16,9 +15,7 @@ export function Main() {
             <IndividualCare></IndividualCare>
             <BannerTwo></BannerTwo>
             <Join></Join>
-            <div className={styles.bottom}>
-                <Information></Information>
-            </div>
+            <Information></Information>
         </>
     )
 }

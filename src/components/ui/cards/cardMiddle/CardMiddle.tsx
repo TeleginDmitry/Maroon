@@ -1,19 +1,36 @@
-import { ProductType } from 'shared/types/product.type'
+import { VolumeType } from 'shared/types/product.type'
 import styles from './CardMiddle.module.scss'
 import { Link } from 'react-router-dom'
 import { CATALOG_PRODUCT_SCREEN } from 'configs/screens.config'
-import { ReactComponent as Ruble } from 'assets/icons/ruble.svg'
 import { Volumes } from './volumes/Volumes'
+import { classNames } from 'utils/classNames/classNames'
+import { Price } from 'components/ui/price/Price'
 
 interface Props {
-    product: ProductType
+    name: string
+    title: string
+    price: number
+    image: string
+    volumes: VolumeType[]
+    id: number
+    className?: string
 }
 
-export function CardMiddle({ product }: Props) {
-    const { id, image, price, title, name, volumes } = product
-
+export function CardMiddle({
+    id,
+    image,
+    price,
+    title,
+    name,
+    volumes,
+    className
+}: Props) {
     return (
-        <div className={styles.product}>
+        <div
+            className={classNames(styles.product, {
+                [className!]: !!className
+            })}
+        >
             <img
                 className={styles.image}
                 src={image}
@@ -23,18 +40,15 @@ export function CardMiddle({ product }: Props) {
 
             <div className={styles.container}>
                 <div className={styles.block}>
-                    <span>{name}</span>
-                    <span>
-                        {price} <Ruble className={styles.icon}></Ruble>
-                    </span>
+                    <span>{title}</span>
+                    <Price price={price}></Price>
                 </div>
                 <div className={styles.block}>
-                    <span>{title}</span>
+                    <span>{name}</span>
                     <Volumes volumes={volumes}></Volumes>
                 </div>
             </div>
             <Link
-                draggable={false}
                 className={styles.link}
                 to={CATALOG_PRODUCT_SCREEN + id}
             ></Link>

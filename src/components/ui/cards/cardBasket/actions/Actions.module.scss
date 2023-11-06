@@ -1,0 +1,13 @@
+.actions {
+    display: flex;
+    gap: 15px;
+
+    .action {
+        padding: 5px;
+        background-color: rgb(0 48 120 / 4%);
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

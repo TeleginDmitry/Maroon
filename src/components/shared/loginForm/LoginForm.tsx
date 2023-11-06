@@ -29,6 +29,7 @@ export function LoginForm() {
         <form onSubmit={handleSubmit} className={styles.form}>
             <Input
                 isWrong={!!errors.email && !!touched.email}
+                inputMode='email'
                 placeholder='Введите свой email...'
                 value={values.email}
                 onChange={handleChange}
