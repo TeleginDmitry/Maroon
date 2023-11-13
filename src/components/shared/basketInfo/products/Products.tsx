@@ -10,17 +10,15 @@ interface Props {
 export function Products({ products }: Props) {
     return (
         <div className={styles.wrapper}>
-            <Controls></Controls>
+            <Controls products={products}></Controls>
             <div className={styles.products}>
-                {products.map(({ product, id, count, isChecked, volumes }) => {
+                {products.map(({ product, id, ...props }) => {
                     return (
                         <CardBasket
-                            key={product.id}
-                            {...product}
+                            key={id}
                             basketId={id}
-                            count={count}
-                            isChecked={isChecked}
-                            volumes={volumes}
+                            {...product}
+                            {...props}
                         ></CardBasket>
                     )
                 })}

@@ -5,7 +5,8 @@ import {
     BasketProductType,
     ProductType,
     RecentlyProductType,
-    PatchRequestDataType
+    PatchRequestDataType,
+    CreateRequestBasketType
 } from 'shared/types/product.type'
 
 export const productsService = {
@@ -32,30 +33,23 @@ export const productsService = {
     },
 
     async getBasketProducts(): Promise<AxiosResponse<BasketProductType[]>> {
-        return instance.get('/products/basket')
+        return instance.get<BasketProductType[]>('/products/basket')
     },
 
     async createBasketProduct(
-        productId: number,
-        selectedVolumes: number[]
+        data: CreateRequestBasketType
     ): Promise<AxiosResponse<BasketProductType>> {
-        return instance.post('/products/basket', {
-            productId,
-            volumes: selectedVolumes
-        })
+        return instance.post('/products/basket', data)
     },
 
-    async deleteBasketProduct(
-        id: number
-    ): Promise<AxiosResponse<BasketProductType>> {
+    async deleteBasketProduct(id: number): Promise<AxiosResponse<void>> {
         return instance.delete(`/products/basket/${id}`)
     },
 
-    async patchBasketProduct(
-        id: number,
-        data: PatchRequestDataType
-    ): Promise<AxiosResponse<BasketProductType>> {
-        return instance.patch(`/products/basket/${id}`, data)
+    async patchBasketProducts(
+        data: PatchRequestDataType[]
+    ): Promise<AxiosResponse<void>> {
+        return instance.patch(`/products/basket`, data)
     },
 
     async getMayLikeProducts(): Promise<AxiosResponse<ProductType[]>> {

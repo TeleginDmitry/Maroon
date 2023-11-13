@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './Checkbox.module.scss'
 import { classNames } from 'utils/classNames/classNames'
 
@@ -8,24 +8,30 @@ interface Props {
     className?: string
     initialState?: boolean
     view?: 'circle' | 'square'
+    disabled?: boolean
 }
 
 export function Checkbox({
     children,
     onToggle,
     className,
-    initialState,
-    view = 'square'
+    initialState = false,
+    view = 'square',
+    disabled = false
 }: Props) {
-    const [isChecked, setChecked] = useState(initialState ?? false)
+    const [isChecked, setChecked] = useState(initialState)
 
     function toggleChecked() {
-        setChecked((state) => {
-            onToggle?.(!state)
+        if (disabled) return
 
-            return !state
-        })
+        setChecked((state) => !state)
+
+        onToggle?.(!isChecked)
     }
+
+    useEffect(() => {
+        setChecked(initialState)
+    }, [initialState])
 
     return (
         <label

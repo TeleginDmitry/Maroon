@@ -5,9 +5,8 @@ import { Counter } from 'components/ui/counter/Counter'
 import { Price } from 'components/ui/price/Price'
 import { Link } from 'react-router-dom'
 import { CATALOG_PRODUCT_SCREEN } from 'configs/screens.config'
-import { PatchRequestDataType, VolumeType } from 'shared/types/product.type'
-import { useMutation } from '@tanstack/react-query'
-import { productsService } from 'services/products.service'
+import { useActions } from 'hooks/useActions'
+import { VolumeType } from 'shared/types/product.type'
 
 interface Props {
     basketId: number
@@ -32,23 +31,14 @@ export function CardBasket({
     volumes,
     id
 }: Props) {
-    const { mutate } = useMutation({
-        mutationFn: async (data: PatchRequestDataType) => {
-            const response = await productsService.patchBasketProduct(
-                basketId,
-                data
-            )
-
-            return response.data
-        }
-    })
+    const { changeBasketProducts } = useActions()
 
     function onToggle(isChecked: boolean) {
-        mutate({ isChecked })
+        changeBasketProducts([{ isChecked, id: basketId }])
     }
 
     function changeProduct(count: number) {
-        mutate({ count })
+        changeBasketProducts([{ count, id: basketId }])
     }
 
     return (

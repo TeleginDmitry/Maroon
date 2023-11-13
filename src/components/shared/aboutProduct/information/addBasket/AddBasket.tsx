@@ -1,49 +1,21 @@
-import { useMutation } from '@tanstack/react-query'
 import { Button } from 'components/ui/button/Button'
-import { productsService } from 'services/products.service'
-import { useState } from 'react'
-import { StatusNotificationType } from 'shared/types/notification.type'
-import { Portal } from 'components/shared/portal/Portal'
-import { CardNotification } from 'components/ui/cards/cardNotification/CardNotification'
-import { VolumeType } from 'shared/types/product.type'
+import { useActions } from 'hooks/useActions'
+import { useTypedSelector } from 'hooks/useTypedSelector'
+import { BasketLoadingSelector } from 'store/products/basket/basket.selectors'
 
 interface Props {
     id: number
-    name: string
-    title: string
-    price: number
-    image: string
-    volumes: VolumeType[]
-    selectedVolumes: number[]
+    volume: number | null
 }
 
-export function AddBasket({ id, selectedVolumes, ...props }: Props) {
-    const [status, setStatus] = useState<StatusNotificationType | null>(null)
+export function AddBasket({ id, volume }: Props) {
+    const { createBasketProduct } = useActions()
 
-    const { mutate, isLoading } = useMutation({
-        mutationFn: async () => {
-            const response = await productsService.createBasketProduct(
-                id,
-                selectedVolumes
-            )
-            return response
-        },
-
-        onSuccess() {
-            changeStatus('success')
-        },
-        onError() {
-            changeStatus('error')
-        }
-    })
-
-    function changeStatus(value: StatusNotificationType | null) {
-        setStatus(value)
-    }
+    const isLoading = useTypedSelector(BasketLoadingSelector)
 
     function createProduct() {
-        if (selectedVolumes.length) {
-            mutate()
+        if (volume) {
+            createBasketProduct({ id, volume })
         }
     }
 
@@ -52,15 +24,6 @@ export function AddBasket({ id, selectedVolumes, ...props }: Props) {
             <Button disabled={isLoading} onClick={createProduct}>
                 Добавить в корзину
             </Button>
-            {status && (
-                <Portal elementId='notification'>
-                    <CardNotification
-                        {...props}
-                        changeStatus={changeStatus}
-                        status={status}
-                    ></CardNotification>
-                </Portal>
-            )}
         </>
     )
 }

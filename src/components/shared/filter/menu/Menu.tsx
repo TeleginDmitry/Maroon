@@ -4,16 +4,14 @@ import { filtersService } from 'services/filters.service'
 import { FILTER_KEY } from 'configs/queryKeys.config'
 import { Buttons } from './buttons/Buttons'
 import { List } from './list/List'
-import { useState } from 'react'
-import { FilterParamsType } from 'shared/types/filter.type'
 import { AccordionList } from './accordionList/AccordionList'
 import { useCategories } from 'hooks/useCategories'
+import { useFilter } from 'hooks/useFilter'
 
 export function Menu() {
-    const categories = useCategories()
-    const [filterParams, setFilterParams] = useState<FilterParamsType>({
-        categories
-    })
+    const initialCategories = useCategories()
+    const { addCategory, categories, removeCategory } =
+        useFilter(initialCategories)
 
     const { data } = useQuery({
         queryFn: async () => {
@@ -23,39 +21,21 @@ export function Menu() {
         queryKey: FILTER_KEY
     })
 
-    function addFilter(category: string) {
-        setFilterParams((state) => {
-            state.categories.push(category)
-
-            return state
-        })
-    }
-
-    function removeFilter(category: string) {
-        setFilterParams((state) => {
-            state.categories = state.categories.filter(
-                (item) => item !== category
-            )
-
-            return state
-        })
-    }
-
     if (!data?.length) return null
 
     return (
         <div className={styles.wrapper}>
             <AccordionList
-                addFilter={addFilter}
-                removeFilter={removeFilter}
+                addCategory={addCategory}
+                removeCategory={removeCategory}
                 filters={data}
             ></AccordionList>
             <List
-                addFilter={addFilter}
-                removeFilter={removeFilter}
+                addCategory={addCategory}
+                removeCategory={removeCategory}
                 filters={data}
             ></List>
-            <Buttons filterParams={filterParams}></Buttons>
+            <Buttons filterParams={categories}></Buttons>
         </div>
     )
 }

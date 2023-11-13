@@ -20,6 +20,9 @@
             color: #707f8d;
             font-size: 14px;
             line-height: 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 5px;
         }
     }
 
@@ -32,6 +35,13 @@
 
         &:last-of-type {
             border-bottom: none;
+        }
+
+        .products {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
         }
     }
 }

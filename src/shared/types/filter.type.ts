@@ -9,6 +9,7 @@ export interface FilterType {
     categories: CategoryType[]
 }
 
-export interface FilterParamsType {
-    categories: string[]
-}
+export type FilterParamsType = string[]
+
+export type AddCategoryType = (category: string) => void
+export type RemoveCategoryType = (category: string) => void

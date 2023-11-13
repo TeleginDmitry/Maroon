@@ -1,29 +1,17 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { useActions } from 'hooks/useActions'
 import styles from './Actions.module.scss'
 import { IconHeart, IconTrash } from '@tabler/icons-react'
-import { productsService } from 'services/products.service'
-import { BASKET_PRODUCTS_KEY } from 'configs/queryKeys.config'
+import { useTypedSelector } from 'hooks/useTypedSelector'
+import { BasketLoadingSelector } from 'store/products/basket/basket.selectors'
 
 interface Props {
     id: number
 }
 
 export function Actions({ id }: Props) {
-    const queryClient = useQueryClient()
+    const { deleteBasketProduct } = useActions()
 
-    const { mutate, isLoading } = useMutation({
-        mutationFn: async () => {
-            const response = await productsService.deleteBasketProduct(id)
-            return response.data
-        },
-        onSuccess: () => {
-            queryClient.invalidateQueries(BASKET_PRODUCTS_KEY)
-        }
-    })
-
-    function deleteProduct() {
-        mutate()
-    }
+    const isLoading = useTypedSelector(BasketLoadingSelector)
 
     return (
         <div className={styles.actions}>
@@ -31,7 +19,7 @@ export function Actions({ id }: Props) {
                 <IconHeart size={20}></IconHeart>
             </button>
             <button
-                onClick={deleteProduct}
+                onClick={() => deleteBasketProduct({ id })}
                 disabled={isLoading}
                 className={styles.action}
             >
