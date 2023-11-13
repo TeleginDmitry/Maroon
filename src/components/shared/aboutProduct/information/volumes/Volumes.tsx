@@ -4,16 +4,13 @@ import { VolumeType } from 'shared/types/product.type'
 
 interface Props {
     volumes: VolumeType[]
-    setSelectedVolumes: React.Dispatch<React.SetStateAction<number[]>>
+    volume: number | null
+    setVolume: React.Dispatch<React.SetStateAction<number | null>>
 }
 
-export function Volumes({ volumes, setSelectedVolumes }: Props) {
-    function onToggle(isChecked: boolean, id: number) {
-        if (isChecked) {
-            setSelectedVolumes((state) => [...state, id])
-        } else {
-            setSelectedVolumes((state) => state.filter((item) => item !== id))
-        }
+export function Volumes({ volumes, volume, setVolume }: Props) {
+    function onToggle(id: number) {
+        setVolume(id)
     }
 
     return (
@@ -23,7 +20,8 @@ export function Volumes({ volumes, setSelectedVolumes }: Props) {
                 {volumes.map(({ amount, id, unit }) => {
                     return (
                         <Checkbox
-                            onToggle={(isChecked) => onToggle(isChecked, id)}
+                            initialState={volume === id}
+                            onToggle={() => onToggle(id)}
                             key={id}
                         >
                             {amount + unit}

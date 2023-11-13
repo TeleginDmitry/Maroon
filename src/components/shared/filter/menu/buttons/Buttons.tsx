@@ -27,13 +27,13 @@ export function Buttons({ filterParams }: Props) {
     })
 
     function onCompleteFilters() {
-        const toStringCategories = filterParams.categories.toString()
+        const categories = filterParams.toString()
 
-        URLSearchParams.set(FILTER_PARAM, toStringCategories)
+        URLSearchParams.set(FILTER_PARAM, categories)
 
         SetURLSearchParams(URLSearchParams)
 
-        mutate(toStringCategories)
+        mutate(categories)
     }
 
     function onClearFilters() {

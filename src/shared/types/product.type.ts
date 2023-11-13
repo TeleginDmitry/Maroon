@@ -34,6 +34,12 @@ export interface BasketProductType {
 }
 
 export interface PatchRequestDataType {
+    id: number
     count?: number
     isChecked?: boolean
+}
+
+export interface CreateRequestBasketType {
+    id: number
+    volume: number
 }

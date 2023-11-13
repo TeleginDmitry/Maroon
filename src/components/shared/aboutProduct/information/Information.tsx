@@ -11,9 +11,9 @@ interface Props {
 }
 
 export function Information({ product }: Props) {
-    const { accordion, volumes, price, title, name, description } = product
+    const { accordion, volumes, price, title, name, description, id } = product
 
-    const [selectedVolumes, setSelectedVolumes] = useState<number[]>([])
+    const [volume, setVolume] = useState<number | null>(null)
 
     return (
         <div className={styles.wrapper}>
@@ -24,15 +24,13 @@ export function Information({ product }: Props) {
             <p className={styles.description}>{description}</p>
             <AccordionList accordion={accordion}></AccordionList>
             <Volumes
-                setSelectedVolumes={setSelectedVolumes}
+                volume={volume}
+                setVolume={setVolume}
                 volumes={volumes}
             ></Volumes>
             <div className={styles.actions}>
                 <Price className={styles.price} price={price}></Price>
-                <AddBasket
-                    selectedVolumes={selectedVolumes}
-                    {...product}
-                ></AddBasket>
+                <AddBasket volume={volume} id={id}></AddBasket>
             </div>
         </div>
     )

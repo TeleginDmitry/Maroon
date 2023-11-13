@@ -1,22 +1,26 @@
-import { FilterType } from 'shared/types/filter.type'
+import {
+    AddCategoryType,
+    FilterType,
+    RemoveCategoryType
+} from 'shared/types/filter.type'
 import styles from './List.module.scss'
 import { Checkbox } from 'components/ui/checkbox/Checkbox'
 import { useCategories } from 'hooks/useCategories'
 
 interface Props {
     filters: FilterType[]
-    addFilter: (category: string) => void
-    removeFilter: (category: string) => void
+    addCategory: AddCategoryType
+    removeCategory: RemoveCategoryType
 }
 
-export function List({ filters, addFilter, removeFilter }: Props) {
+export function List({ filters, addCategory, removeCategory }: Props) {
     const categoriesArray = useCategories()
 
     function toggleValue(isChecked: boolean, category: string) {
         if (isChecked) {
-            removeFilter(category)
+            removeCategory(category)
         } else {
-            addFilter(category)
+            addCategory(category)
         }
     }
 

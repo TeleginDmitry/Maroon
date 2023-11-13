@@ -1,20 +1,24 @@
-import { FilterType } from 'shared/types/filter.type'
+import {
+    AddCategoryType,
+    FilterType,
+    RemoveCategoryType
+} from 'shared/types/filter.type'
 import styles from './AccordionList.module.scss'
 import { Accordion } from 'components/ui/accordion/Accordion'
 import { Checkbox } from 'components/ui/checkbox/Checkbox'
 
 interface Props {
     filters: FilterType[]
-    addFilter: (category: string) => void
-    removeFilter: (category: string) => void
+    addCategory: AddCategoryType
+    removeCategory: RemoveCategoryType
 }
 
-export function AccordionList({ filters, addFilter, removeFilter }: Props) {
+export function AccordionList({ filters, addCategory, removeCategory }: Props) {
     function toggleValue(isChecked: boolean, category: string) {
         if (isChecked) {
-            removeFilter(category)
+            removeCategory(category)
         } else {
-            addFilter(category)
+            addCategory(category)
         }
     }
     return (
