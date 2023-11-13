@@ -16,7 +16,7 @@ export function CreateRecentlyProduct() {
     useEffect(() => {
         if (!id || typeof +id !== 'number') return
         mutate(+id)
-    }, [])
+    }, [id])
 
     return <Outlet />
 }
