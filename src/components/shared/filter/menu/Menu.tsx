@@ -12,7 +12,7 @@ export function Menu() {
     const initialCategories = useCategories()
     const { addCategory, categories, removeCategory } =
         useFilter(initialCategories)
-        
+
     const { data } = useQuery({
         queryFn: async () => {
             const response = await filtersService.getFilters()
