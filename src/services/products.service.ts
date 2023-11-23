@@ -1,6 +1,8 @@
 import { instance } from 'api/api.interceptor'
 import { AxiosResponse } from 'axios'
 import { FILTER_PARAM } from 'configs/filter.config'
+import { PRODUCTS_LIMIT } from 'configs/pagination.config'
+import { PaginationResponseType } from 'shared/types/pagination.type'
 import {
     BasketProductType,
     ProductType,
@@ -11,10 +13,20 @@ import {
 
 export const productsService = {
     async getProducts(
+        page: number,
         categories?: string
-    ): Promise<AxiosResponse<ProductType[]>> {
+    ): Promise<AxiosResponse<PaginationResponseType<ProductType[]>>> {
+        const params: Record<string, string | number> = {
+            page,
+            limit: PRODUCTS_LIMIT
+        }
+
+        if (categories) {
+            params[FILTER_PARAM] = categories
+        }
+
         return instance.get('/products', {
-            params: { [FILTER_PARAM]: categories }
+            params
         })
     },
 

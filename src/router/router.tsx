@@ -25,7 +25,7 @@ import {
 } from 'configs/screens.config'
 
 import { createBrowserRouter } from 'react-router-dom'
-import { CreateRecentlyProduct, Private } from './helpers'
+import { CreateRecentlyProduct, Private, AuthenticatedUser } from './helpers'
 
 export const router = createBrowserRouter([
     {
@@ -49,13 +49,20 @@ export const router = createBrowserRouter([
                 element: <Catalog />,
                 path: CATALOG_SCREEN
             },
+
             {
-                element: <Login />,
-                path: LOGIN_SCREEN
-            },
-            {
-                element: <Register />,
-                path: REGISTER_SCREEN
+                element: <AuthenticatedUser />,
+                path: MAIN_SCREEN,
+                children: [
+                    {
+                        element: <Login />,
+                        path: LOGIN_SCREEN
+                    },
+                    {
+                        element: <Register />,
+                        path: REGISTER_SCREEN
+                    }
+                ]
             },
             {
                 element: <NotFound />,

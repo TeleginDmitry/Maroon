@@ -1,6 +1,7 @@
 .wrapper {
     padding: 50px 100px 70px;
     position: relative;
+    min-height: 80vh;
 
     @media (width <= 900px) {
         padding: 50px 45px 60px;

@@ -81,6 +81,5 @@ function RejectedAction(action: AnyAction) {
     return action.type.endsWith('rejected')
 }
 
-export const {} = BasketSlice.actions
 // eslint-disable-next-line import/no-default-export
 export default BasketSlice.reducer

@@ -1,7 +1,7 @@
 type ModsType = Record<string, boolean | string>
 
 function classNames(cls: string, mods?: ModsType, additional?: string[]) {
-    const result = [cls]
+    const result = cls.length ? [cls] : []
 
     if (!mods) return result.join(' ')
 

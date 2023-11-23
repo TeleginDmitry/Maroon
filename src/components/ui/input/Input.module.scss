@@ -18,4 +18,11 @@
     .wrong {
         border-bottom: 1px solid #f14337;
     }
+
+    .icon {
+        position: absolute;
+        right: 10px;
+        bottom: 8px;
+        cursor: pointer;
+    }
 }
