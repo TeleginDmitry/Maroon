@@ -10,12 +10,10 @@
         height: 350px;
         user-select: none;
         object-fit: cover;
-        opacity: 0.8;
         transition: all 0.3s;
     }
 
     &:hover .image {
-        opacity: 1;
         transform: scale(1.1);
     }
 

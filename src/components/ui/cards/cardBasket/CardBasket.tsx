@@ -50,7 +50,10 @@ export function CardBasket({
                             onToggle={onToggle}
                             initialState={isChecked}
                         ></Checkbox>
-                        <Link to={CATALOG_PRODUCT_SCREEN + id}>
+                        <Link
+                            className={styles.link}
+                            to={CATALOG_PRODUCT_SCREEN + id}
+                        >
                             <img
                                 className={styles.image}
                                 src={image}

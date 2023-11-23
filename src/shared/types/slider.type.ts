@@ -4,18 +4,12 @@ export interface OptionsType {
     isActive: boolean
     isPrev: boolean
     isNext: boolean
+    inView: boolean
 }
 
-export type PositionType = 'left' | 'center' | 'right'
-
-export interface NavigationType {
-    position?: PositionType
-    className?: string
-}
-
-export interface PaginationType {
-    position?: PositionType
-    className?: string
+export interface ModulesClasses {
+    classNamePagination?: string
+    classNameNavigation?: string
 }
 
 export interface SliderContextType {

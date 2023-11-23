@@ -18,9 +18,9 @@ export function List({ filters, addCategory, removeCategory }: Props) {
 
     function toggleValue(isChecked: boolean, category: string) {
         if (isChecked) {
-            removeCategory(category)
-        } else {
             addCategory(category)
+        } else {
+            removeCategory(category)
         }
     }
 

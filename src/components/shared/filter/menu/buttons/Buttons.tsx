@@ -3,9 +3,9 @@ import styles from './Buttons.module.scss'
 import { FilterParamsType } from 'shared/types/filter.type'
 import { useSearchParams } from 'react-router-dom'
 import { FILTER_PARAM } from 'configs/filter.config'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { productsService } from 'services/products.service'
+import { useQueryClient } from '@tanstack/react-query'
 import { PRODUCTS_KEY } from 'configs/queryKeys.config'
+import { productsService } from 'services/products.service'
 
 interface Props {
     filterParams: FilterParamsType
@@ -16,32 +16,39 @@ export function Buttons({ filterParams }: Props) {
 
     const [URLSearchParams, SetURLSearchParams] = useSearchParams()
 
-    const { mutate } = useMutation({
-        mutationFn: async (categories: string) => {
-            const response = await productsService.getProducts(categories)
-            return response.data
-        },
-        onSuccess: (data) => {
-            queryClient.setQueryData(PRODUCTS_KEY, data)
-        }
-    })
-
-    function onCompleteFilters() {
+    async function onCompleteFilters() {
         const categories = filterParams.toString()
 
         URLSearchParams.set(FILTER_PARAM, categories)
 
         SetURLSearchParams(URLSearchParams)
 
-        mutate(categories)
+        await queryClient.fetchInfiniteQuery({
+            queryKey: [...PRODUCTS_KEY],
+            queryFn: async () => {
+                const response = await productsService.getProducts(
+                    0,
+                    categories
+                )
+
+                return response.data
+            }
+        })
     }
 
-    function onClearFilters() {
+    async function onClearFilters() {
         URLSearchParams.delete(FILTER_PARAM)
 
         SetURLSearchParams(URLSearchParams)
 
-        mutate('')
+        await queryClient.fetchInfiniteQuery({
+            queryKey: PRODUCTS_KEY,
+            queryFn: async () => {
+                const response = await productsService.getProducts(0)
+
+                return response.data
+            }
+        })
     }
 
     return (

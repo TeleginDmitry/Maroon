@@ -12,6 +12,7 @@
         flex-direction: column;
         gap: 15px;
         max-width: 330px;
+        position: relative;
 
         @media (width <= 1024px) {
             max-width: 245px;
@@ -34,6 +35,12 @@
                     font-size: 12px;
                 }
             }
+        }
+
+        .link {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
         }
     }
 }

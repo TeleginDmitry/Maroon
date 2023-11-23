@@ -3,6 +3,7 @@ import styles from './Information.module.scss'
 import { BasketProductType } from 'shared/types/product.type'
 import { IconAlertOctagon } from '@tabler/icons-react'
 import { Price } from 'components/ui/price/Price'
+import { classNames } from 'utils/classNames/classNames'
 
 interface Props {
     products: BasketProductType[]
@@ -18,7 +19,11 @@ export function Information({ products }: Props) {
     if (!checkedProducts.length) {
         return (
             <div className={styles.wrapper}>
-                <div className={styles.buy}>
+                <div
+                    className={classNames(styles.buy, {
+                        [styles.buy__border]: !checkedProducts.length
+                    })}
+                >
                     <Button disabled className={styles.button}>
                         Перейти к оформлению
                     </Button>

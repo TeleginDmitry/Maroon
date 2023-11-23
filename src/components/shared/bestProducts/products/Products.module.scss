@@ -1,7 +1,17 @@
 .navigation {
+    margin-right: 45px;
+
+    @media (width <= 570px) {
+        margin-right: 0;
+    }
+
     @media (width <= 375px) {
         display: none;
     }
+}
+
+.pagination {
+    display: none;
 }
 
 .slide {
@@ -9,12 +19,5 @@
 
     @media (width <= 425px) {
         min-width: calc(100vw - 30px);
-    }
-
-    .product {
-        img {
-            opacity: 1 !important;
-            transform: scale(1.1);
-        }
     }
 }

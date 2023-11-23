@@ -1,0 +1,20 @@
+.wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    span {
+        animation-name: opacity;
+        animation-duration: 250ms;
+
+        @keyframes opacity {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+}

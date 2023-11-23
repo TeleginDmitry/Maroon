@@ -10,6 +10,8 @@ import {
 import styles from './Map.module.scss'
 
 export function Map() {
+    return null
+
     return (
         <YMaps
             query={{

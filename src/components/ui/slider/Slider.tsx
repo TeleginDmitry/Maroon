@@ -1,8 +1,7 @@
 import styles from './Slider.module.scss'
 import { SliderProvider } from 'providers/Slider.provider'
 import {
-    NavigationType,
-    PaginationType,
+    ModulesClasses,
     SliderContextType,
     SliderLogicType
 } from 'shared/types/slider.type'
@@ -12,10 +11,8 @@ import { useSlider } from 'hooks/useSlider'
 import { useSliderItem } from 'hooks/useSliderItem'
 import { classNames } from 'utils/classNames/classNames'
 
-interface Props extends SliderLogicType {
+interface Props extends SliderLogicType, ModulesClasses {
     children: React.ReactNode
-    navigation?: boolean | NavigationType
-    pagination?: boolean | PaginationType
     wrapperClass?: string
     containerClass?: string
 }
@@ -27,10 +24,10 @@ export function Slider(props: Props) {
         duration = 300,
         initialIndex = 0,
         countSwipe = 1,
-        navigation = true,
-        pagination = true,
         wrapperClass,
-        containerClass
+        containerClass,
+        classNameNavigation,
+        classNamePagination
     } = props
 
     const {
@@ -90,12 +87,10 @@ export function Slider(props: Props) {
                         {children}
                     </div>
                 </DraggableCore>
-                {(navigation || pagination) && (
-                    <Modules
-                        navigation={navigation}
-                        pagination={pagination}
-                    ></Modules>
-                )}
+                <Modules
+                    classNameNavigation={classNameNavigation}
+                    classNamePagination={classNamePagination}
+                ></Modules>
             </div>
         </SliderProvider>
     )
