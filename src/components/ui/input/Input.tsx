@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { classNames } from 'utils/classNames/classNames'
 import styles from './Input.module.scss'
-import { IconEye , IconEyeOff } from '@tabler/icons-react'
+import { IconEye, IconEyeOff } from '@tabler/icons-react'
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
     children?: React.ReactNode
