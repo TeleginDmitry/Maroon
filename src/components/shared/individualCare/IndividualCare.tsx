@@ -1,5 +1,5 @@
 import styles from './IndividualCare.module.scss'
-import image from 'assets/images/individualCare.png'
+import image from 'assets/images/individualCare.avif'
 import { Text } from './text/Text'
 
 export function IndividualCare() {
@@ -12,6 +12,7 @@ export function IndividualCare() {
                         className={styles.image}
                         src={image}
                         alt='Индивидуальная забота'
+                        loading='lazy'
                     />
                 </div>
             </div>

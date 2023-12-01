@@ -10,7 +10,7 @@
     }
 
     .background {
-        background-image: url('../../../../assets/images/bannerOne.png');
+        background-image: url('../../../../assets/images/bannerOne.avif');
         background-repeat: no-repeat;
         background-size: cover;
         position: absolute;
@@ -26,7 +26,7 @@
         }
 
         @media (width <= 480px) {
-            background-image: url('../../../../assets/images/bannerTwo.png');
+            background-image: url('../../../../assets/images/bannerTwo.avif');
             background-size: cover;
             background-position: 0 0;
         }
