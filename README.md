@@ -1,6 +1,6 @@
 # Maroon Project
 
-![Maroon Logo](src/assets/images/logo.png)
+![Maroon Logo](src/assets/images/logo.avif)
 
 Maroon is a modern web application project built with React and Redux, featuring a variety of tools and libraries for efficient development.
 
