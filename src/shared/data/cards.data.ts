@@ -1,5 +1,5 @@
-import cardOne from 'assets/images/cardOne.png'
-import cardTwo from 'assets/images/cardTwo.png'
+import cardOne from 'assets/images/cardOne.avif'
+import cardTwo from 'assets/images/cardTwo.avif'
 import { CATALOG_SCREEN } from 'configs/screens.config'
 
 export const cards = [
